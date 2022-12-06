@@ -78,7 +78,7 @@ const confirmPassword = ref("");
 
 // Error Message
 const errorMsg = ref("");
-
+// alert (errorMsg.value)
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();
 
@@ -93,6 +93,7 @@ const signUp = async () => {
     } catch (error) {
       // displays error message
       errorMsg.value = error.message;
+      
       // hides error message
       setTimeout(() => {
         errorMsg.value = null;
