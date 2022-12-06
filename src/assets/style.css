@@ -1,0 +1,96 @@
+
+
+:root {
+    --colorWhite: #ffffff;
+    --colorBlack: #000000;
+    --colorRed: red;
+    --fontSize-sm: 16px;
+    --fontFamily: 'Arial, Helvetica, sans-serif';
+    --fontTitle: 'Arial';
+    --fontBody: 'Helvetica';
+} */
+
+
+
+/* SignIn Component */
+
+h1 {
+    color: var(--colorRed);
+    color: red;
+}
+
+.container{
+    display: flex;
+    margin: 50px auto;
+    flex-direction: column;
+    align-items: center;
+    background: lightblue;
+    max-width: 500px;
+    /* min-width: 300px; */
+    text-align: center;
+  }
+  
+  .form{
+    width: auto;
+    
+    margin: 30px auto;
+    
+  }
+  
+  
+  .form-input{
+    display: flex;
+  
+    flex-direction: column;
+    align-items: center;
+    
+    
+  
+    
+  }
+  
+  .input-field-label{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px auto;
+  }
+  
+  .input-field{
+    color: #6b708d;
+    font-size: 15px;
+    font-weight: 400;
+    /* width: 80%; */
+    border-radius: 10px;
+    height: 70px;
+    padding-left: 20px;
+    margin: 10px auto;
+    
+    background-color: white;
+    border: none;
+  }
+  
+  .button{
+    
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 50px;
+    padding: 15px auto;
+    background-color: gray;
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+    } 
+
+
+
+/* SignUp Component */
+
+/* Home view */
+
+
+
+ /* Account View */
