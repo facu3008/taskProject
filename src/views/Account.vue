@@ -28,17 +28,17 @@
   }
 
   // SEGUN ALEIX ESTO SE BORRA
-  // async function signOut() {
-  //   try {
-  //     loading.value = true
-  //     let { error } = await supabase.auth.signOut()
-  //     if (error) throw error
-  //   } catch (error) {
-  //     alert(error.message)
-  //   } finally {
-  //     loading.value = false
-  //   }
-  // }
+  async function signOut() {
+    try {
+      loading.value = true
+      let { error } = await supabase.auth.signOut()
+      if (error) throw error
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      loading.value = false
+    }
+  }
 </script>
 
 <style>

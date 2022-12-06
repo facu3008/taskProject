@@ -1,7 +1,18 @@
 <template>
 <div class="container">
     <h3>{{task.title}}</h3>
+    <p>{{task.description}}</p>
     <button @click="deleteTask">Delete {{task.title}}</button>
+    <button @click="editTaskFunction">Edit {{task.title}}</button>
+    <button @click="archiveTaskFunction">Store{{task.title}}</button>
+    <div v-show="editTask">
+        <input type="text" placeholder="Edit Title" v-model="name" />
+        <input type="text" placeholder="Edit Description" v-model="description">
+        <button @click="changeTask">Edit</button>
+    </div>
+    <div v-show="storeTask">
+        <button @click="statusTask">Store</button>     
+    </div>
 </div>
 </template>
 
@@ -12,6 +23,8 @@ import { supabase } from '../supabase';
 
 const taskStore = useTaskStore();
 
+const emit = defineEmits(['deleteTasksHijo', 'editTasksHijo', 'archiveTasksHijo']);
+
 const props = defineProps({
     task: Object,
 });
@@ -19,7 +32,37 @@ const props = defineProps({
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async() => {
     await taskStore.deleteTask(props.task.id);
+    
+    emit ('deleteTasksHijo')
 };
+
+// Función para  editar tarea.
+
+
+const changeTask = async () => {
+    await taskStore.changeTask(name.value, description.value, props.task.id);
+    editTask.value = false;
+    
+    emit ('editTasksHijo');
+};
+
+const editTask = ref (false);
+const editTaskFunction = () => {
+    editTask.value = !editTask.value
+}
+
+// Funcion archivar task
+const statusTask = async () => {
+    await taskStore.statusTask(is_complete.value, props.task.id);
+    archiveTask.value = false;
+    emit ('archiveTaskHijo')
+};
+const archiveTask = ref (false)
+const archiveTaskFunction = () => {
+    archiveTask.value = !archiveTask.value   
+};
+
+
 
 </script>
 

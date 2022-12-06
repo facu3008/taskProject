@@ -6,9 +6,14 @@
       <h3>Your account:</h3>
       <router-link to="/account">Account</router-link>
     </div>
-    <NewTask />
+    <NewTask @getTaskHijo ="getTasks" />
     <h1>Tasks:</h1>
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+    <!-- <TaskItem v-for="task in tasks" :key="task.id" /> -->
+    <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task" 
+     @deleteTasksHijo="getTasks"
+     @editTasksHijo="getTasks" /> -->
+     <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @deleteTasksHijo="getTasks" @editTasksHijo="getTasks" />
+     
   </div>
 </template>
 
