@@ -12,7 +12,9 @@
     <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task" 
      @deleteTasksHijo="getTasks"
      @editTasksHijo="getTasks" /> -->
-     <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @deleteTasksHijo="getTasks" @editTasksHijo="getTasks" />
+     <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @deleteTasksHijo="getTasks" @editTasksHijo="getTasks" 
+     @archiveTaskHijo="getTasks"/> -->
+     <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @getTaskHijo="getTasks"/>
      
   </div>
 </template>

@@ -8,16 +8,19 @@
     --fontFamily: 'Arial, Helvetica, sans-serif';
     --fontTitle: 'Arial';
     --fontBody: 'Helvetica';
-} */
+} 
 
 
 
 /* SignIn Component */
 
-h1 {
-    color: var(--colorRed);
-    color: red;
+
+
+.wrapper h1 {
+
+  color: var(--colorRed);
 }
+
 
 .container{
     display: flex;

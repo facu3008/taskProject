@@ -1,18 +1,19 @@
 <template>
 <div class="container">
-    <h3>{{task.title}}</h3>
-    <p>{{task.description}}</p>
+    <h3 v-bind:class="task.is_complete ? `completed` : `not-completed`"> {{task.title}}</h3>
+    <p v-bind:class="task.is_complete ? `completed` : `not-completed`">{{task.description}}</p>
     <button @click="deleteTask">Delete {{task.title}}</button>
     <button @click="editTaskFunction">Edit {{task.title}}</button>
-    <button @click="archiveTaskFunction">Store{{task.title}}</button>
+    <!-- <button @click="archiveTaskFunction">Store</button> -->
     <div v-show="editTask">
         <input type="text" placeholder="Edit Title" v-model="name" />
         <input type="text" placeholder="Edit Description" v-model="description">
         <button @click="changeTask">Edit</button>
     </div>
-    <div v-show="storeTask">
+    <button @click="statusTask">Complete</button>
+    <!-- <div v-show="storeTask">
         <button @click="statusTask">Store</button>     
-    </div>
+    </div> -->
 </div>
 </template>
 
@@ -23,7 +24,15 @@ import { supabase } from '../supabase';
 
 const taskStore = useTaskStore();
 
-const emit = defineEmits(['deleteTasksHijo', 'editTasksHijo', 'archiveTasksHijo']);
+// Defino los emits a utilizar
+// const emit = defineEmits(['deleteTasksHijo', 'editTasksHijo', 'archiveTasksHijo']);
+const emit = defineEmits(['getTaskHijo']);
+
+// Defino variables para valores de inputs
+const name = ref('');
+const description = ref('');
+
+
 
 const props = defineProps({
     task: Object,
@@ -33,7 +42,8 @@ const props = defineProps({
 const deleteTask = async() => {
     await taskStore.deleteTask(props.task.id);
     
-    emit ('deleteTasksHijo')
+    // emit ('deleteTasksHijo')
+    emit ('getTaskHijo')
 };
 
 // Función para  editar tarea.
@@ -43,30 +53,48 @@ const changeTask = async () => {
     await taskStore.changeTask(name.value, description.value, props.task.id);
     editTask.value = false;
     
-    emit ('editTasksHijo');
+    // emit ('editTasksHijo');
+    emit ('getTaskHijo');
 };
 
 const editTask = ref (false);
 const editTaskFunction = () => {
+    console.log("prbando edit boton")
     editTask.value = !editTask.value
 }
 
+const status = ref("props.task.is_complete")
+
 // Funcion archivar task
 const statusTask = async () => {
-    await taskStore.statusTask(is_complete.value, props.task.id);
-    archiveTask.value = false;
-    emit ('archiveTaskHijo')
+    await taskStore.statusTask(!status.value, props.task.id);
+    
+    status.value= !status.value
+
+    console.log(status.value)
+    // emit ('archiveTaskHijo')
+    emit ('getTaskHijo')
 };
-const archiveTask = ref (false)
-const archiveTaskFunction = () => {
-    archiveTask.value = !archiveTask.value   
-};
+// const archiveTask = ref (false)
+// const archiveTaskFunction = () => {
+//     console.log("prbando Stores boton")
+//     archiveTask.value = !archiveTask.value   
+// };
 
 
 
 </script>
 
-<style></style>
+<style>
+.completed {
+    color: blue
+}
+.not-completed {
+    color:red
+}
+
+
+</style>
 
 <!--
 **Hints**
