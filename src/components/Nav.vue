@@ -21,7 +21,7 @@
           <p>Welcome, user</p>
         </li>
         <li>
-          <button @click="signOut" class="button">Log out</button>
+          <button @click="signOut" class="button-log">Log out</button>
         </li>
       </ul>
     </div>

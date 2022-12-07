@@ -4,13 +4,13 @@
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div>
-        <div class="input-field">
+        <div class="input-field-task">
             <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
         </div>
-        <div class="input-field">
+        <div class="input-field-task">
             <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
         </div>
-        <button @click="addTask" class="button">Add</button>
+        <button @click="addTask" class="btn-add"></button>
     </div>
 </template>
 
@@ -57,5 +57,18 @@ if(name.value.length === 0 || description.value.length === 0){
 
 </script>
 
-<style></style>
+<style>
+
+.btn-add{
+        background-image:url('../assets/img/add.png');
+        background-repeat:no-repeat;
+        height:30px;
+        width:30px;
+        background-size: cover;
+        background-position:center;
+        margin: 0 10px;
+        border: none;
+    }
+
+</style>
   

@@ -22,7 +22,7 @@
 }
 
 
-.container{
+.container-sign{
     display: flex;
     margin: 50px auto;
     flex-direction: column;
@@ -73,7 +73,9 @@
     border: none;
   }
   
-  .button{
+
+/* Botones varios */
+  .button-log{
     
     font-size: 17px;
     text-align: center;

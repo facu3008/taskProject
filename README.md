@@ -30,3 +30,10 @@ Consiste en pagina web para gestionar las tareas pendientes.
 ### 06 diciembre:
 
 - Implentar la logica para el Sign Up, Sign In y Sing Out
+- Implentar la logica para agregar items, delete, update, stored
+
+### 06 diciembre:
+
+- Finalizar logica pendiente de Stored
+- Comenzar CSS de Todo Task - crear etiquetas correspondientes en caso de ser necesario
+-

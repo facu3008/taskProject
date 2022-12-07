@@ -1,19 +1,29 @@
 <template>
-<div class="container">
-    <h3 v-bind:class="task.is_complete ? `completed` : `not-completed`"> {{task.title}}</h3>
-    <p v-bind:class="task.is_complete ? `completed` : `not-completed`">{{task.description}}</p>
-    <button @click="deleteTask">Delete {{task.title}}</button>
-    <button @click="editTaskFunction">Edit {{task.title}}</button>
-    <!-- <button @click="archiveTaskFunction">Store</button> -->
-    <div v-show="editTask">
-        <input type="text" placeholder="Edit Title" v-model="name" />
-        <input type="text" placeholder="Edit Description" v-model="description">
-        <button @click="changeTask">Edit</button>
+<div class="container-task">
+    <div class="container-task-text">
+        <h3 v-bind:class="task.is_complete ? `completed` : `not-completed`"> {{task.title}}</h3>
+        <p v-bind:class="task.is_complete ? `completed` : `not-completed`">{{task.description}}</p>
+
     </div>
-    <button @click="statusTask">Complete</button>
+    <div class="container-task-btn">
+
+        <button @click="deleteTask" class="btn-delete"></button>
+        <button @click="editTaskFunction" class="btn-edit"></button>
+        <!-- <button @click="archiveTaskFunction">Store</button> -->
+        <div v-show="editTask">
+            <input type="text" placeholder="Edit Title" v-model="name" />
+            <input type="text" placeholder="Edit Description" v-model="description">
+            <button @click="changeTask" class="btn-edit"></button>
+        </div>
+        <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
+    </div>
     <!-- <div v-show="storeTask">
         <button @click="statusTask">Store</button>     
     </div> -->
+
+    
+
+
 </div>
 </template>
 
@@ -67,6 +77,7 @@ const status = ref("props.task.is_complete")
 
 // Funcion archivar task
 const statusTask = async () => {
+    console.log("Click")
     await taskStore.statusTask(!status.value, props.task.id);
     
     status.value= !status.value
@@ -92,6 +103,94 @@ const statusTask = async () => {
 .not-completed {
     color:red
 }
+
+/* 
+button:hover{
+    width: 10%;
+    height: 10%;
+} */
+.btn-delete:hover{
+    height:30px;
+    width:30px;
+}
+.btn-delete{
+        background-image:url('../assets/img/delete.png');
+        background-repeat:no-repeat;
+        
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+
+    }
+.btn-edit{
+        background-image:url('../assets/img/update.png');
+        background-repeat:no-repeat;
+        
+        height:30px;
+        width:30px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+
+
+    .btn-edit:hover{
+    height:30px;
+    width:30px;
+}
+
+
+.btn-ready{
+        background-image:url('../assets/img/check.png');
+        background-repeat:no-repeat;
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+
+
+.btn-ready:hover{
+        height:30px;
+        width:30px;
+    }
+.btn-not-ready{
+        background-image:url('../assets/img/not-check.png');
+        background-repeat:no-repeat;
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+.btn-not-ready:hover{
+        height:30px;
+        width:30px;
+    }
+
+    .container-task{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+.container-task-text{
+        /* margin: 0 100px; */
+    /* border: 1px solid black; */
+    /* min-width: 400px; */
+    justify-content: center;
+    text-align: center;
+    width: 60vw;
+}
+
+
 
 
 </style>

@@ -2,7 +2,7 @@
  
   <template>
 
-  <div class="container">
+  <div class="container-sign">
     <h3 class="header-title">Log In to ToDo App</h3>
     <!-- <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p> -->
     <h4>Logueate con tu email y password personal</h4>
@@ -32,7 +32,7 @@
             />
           </div>
           
-          <button class="button" type="submit" >Log In</button>
+          <button class="button-log" type="submit" >Log In</button>
           
           
           <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="log-in-link"/></p>

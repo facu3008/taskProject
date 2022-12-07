@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-sign">
 
     <div class="header">
       <div class="header-description">
@@ -43,7 +43,7 @@
             required
           />
         </div>
-        <button class="button" type="submit">Sign Up</button>
+        <button class="button-log" type="submit">Sign Up</button>
         <p>
           Have an account?
           <PersonalRouter
