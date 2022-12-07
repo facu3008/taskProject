@@ -10,10 +10,10 @@
         <button @click="deleteTask" class="btn-delete"></button>
         <button @click="editTaskFunction" class="btn-edit"></button>
         <!-- <button @click="archiveTaskFunction">Store</button> -->
-        <div v-show="editTask">
+        <div v-show="editTask" class="input-field-task">
             <input type="text" placeholder="Edit Title" v-model="name" />
             <input type="text" placeholder="Edit Description" v-model="description">
-            <button @click="changeTask" class="btn-edit"></button>
+            <button @click="changeTask" class="btn-edit-ready"></button>
         </div>
         <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
     </div>
@@ -98,10 +98,34 @@ const statusTask = async () => {
 
 <style>
 .completed {
-    color: blue
+    text-decoration: line-through;
+    text-decoration-line: line-through;
+    font-weight:bolder;
+    color: gray;
+    min-width: 20vw;
+    /* max-width: 70vw; */
+    width: 40vw;
+    height: auto;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center;
 }
 .not-completed {
-    color:red
+    color:black;
+    min-width: 20vw;
+    /* max-width: 70vw; */
+    width: 40vw;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center;
 }
 
 /* 
@@ -109,6 +133,10 @@ button:hover{
     width: 10%;
     height: 10%;
 } */
+
+.container-task-btn{
+    margin: auto 0;
+}
 .btn-delete:hover{
     height:30px;
     width:30px;
@@ -127,6 +155,17 @@ button:hover{
     }
 .btn-edit{
         background-image:url('../assets/img/update.png');
+        background-repeat:no-repeat;
+        
+        height:30px;
+        width:30px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+.btn-edit-ready{
+        background-image:url('../assets/img/send.png');
         background-repeat:no-repeat;
         
         height:30px;
@@ -178,16 +217,22 @@ button:hover{
     .container-task{
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
 
-.container-task-text{
-        /* margin: 0 100px; */
-    /* border: 1px solid black; */
-    /* min-width: 400px; */
-    justify-content: center;
-    text-align: center;
-    width: 60vw;
+.container-task-text h3, .container-task-text p{
+    /* min-width: 20vw;
+   
+    width: 40vw;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center; */
+   
 }
 
 

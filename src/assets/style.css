@@ -14,11 +14,15 @@
 
 /* SignIn Component */
 
-
+.wrapper{
+  background-color: #6b708d;
+}
 
 .wrapper h1 {
 
-  color: var(--colorRed);
+  /* color: var(--colorRed); */
+  color: black;
+  text-align: center;
 }
 
 

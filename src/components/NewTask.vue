@@ -1,17 +1,18 @@
 <template>
-    <h1>Add a new Task</h1>
-    <div v-if="showErrorMessage">
-        <p class="error-text">{{ errorMessage }}</p>
-    </div>
-    <div>
-        <div class="input-field-task">
-            <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+    <!-- <div class="container-newTask"> -->
+
+        <h1>Add a new Task</h1>
+        <div v-if="showErrorMessage">
+            <p class="error-text">{{ errorMessage }}</p>
         </div>
-        <div class="input-field-task">
-            <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+        <div class="container-newTask">
+            <div class="input-field-task">
+                <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+                <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+            </div>
+            <button @click="addTask" class="btn-add"></button>
         </div>
-        <button @click="addTask" class="btn-add"></button>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script setup>
@@ -59,6 +60,32 @@ if(name.value.length === 0 || description.value.length === 0){
 
 <style>
 
+.container-newTask{
+    display: flex;
+    justify-content: center;
+}
+
+.input-field-task input:hover{
+    padding: 10px 0;
+    margin: 15px;
+}
+
+.input-field-task input{
+width: 90%;
+background: aquamarine;
+
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    /* align-content: center; */
+    /* align-items: center; */
+    text-align: center;
+
+}
+
+
 .btn-add{
         background-image:url('../assets/img/add.png');
         background-repeat:no-repeat;
@@ -66,7 +93,7 @@ if(name.value.length === 0 || description.value.length === 0){
         width:30px;
         background-size: cover;
         background-position:center;
-        margin: 0 10px;
+        margin: auto 10px;
         border: none;
     }
 
