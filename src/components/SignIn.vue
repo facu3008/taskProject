@@ -1,11 +1,13 @@
 <!-- COMPONENTE BOILERPLATE -->
  
   <template>
+<div class="container-form">
+
 
   <div class="container-sign">
-    <h3 class="header-title">Log In to ToDo App</h3>
+    <h3 class="header-title">Log In to To-Do App</h3>
     <!-- <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p> -->
-    <h4>Logueate con tu email y password personal</h4>
+    <!-- <h4>Logueate con tu email y password personal</h4> -->
     <form @submit.prevent="signIn" class="form-sign-in">
       <!-- cambio signUp por signIn en form @submit.prevent -->
       <div class="form">
@@ -44,7 +46,7 @@
       </div>
     </form>  
   </div>
-
+</div>
 </template>
 
 <script setup>
@@ -90,7 +92,6 @@ const signIn = async () => {
 </script>
 
 <style>
-
 
 
 

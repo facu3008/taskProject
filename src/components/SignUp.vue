@@ -1,4 +1,7 @@
 <template>
+  <div class="container-form">
+
+  
   <div class="container-sign">
 
     <div class="header">
@@ -57,6 +60,7 @@
 
     <div v-show="errorMsg">{{errorMsg}}</div>
   </div>
+</div>
 </template>
 
 <script setup>

@@ -7,7 +7,7 @@
       <router-link to="/account">Account</router-link>
     </div>
     <NewTask @getTaskHijo ="getTasks" />
-    <h1>Tasks:</h1>
+    <!-- <h1>Tasks:</h1> -->
     <!-- <TaskItem v-for="task in tasks" :key="task.id" /> -->
     <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task" 
      @deleteTasksHijo="getTasks"
