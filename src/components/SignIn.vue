@@ -6,43 +6,27 @@
 
   <div class="container-sign">
     <h3 class="header-title">Log In to To-Do App</h3>
-    <!-- <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p> -->
-    <!-- <h4>Logueate con tu email y password personal</h4> -->
+    
     <form @submit.prevent="signIn" class="form-sign-in">
-      <!-- cambio signUp por signIn en form @submit.prevent -->
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            id="email"
-            v-model="email"
-            required
-            />
-          </div>
-          <div class="form-input">
-            <label class="input-field-label">Password</label>
-            <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="password"
-            v-model="password"
-            required
-            />
-          </div>
+          <label class="form-input-field-label">E-mail</label>
+          <input type="email" class="form-input-field-input" placeholder="example@gmail.com" id="email"
+          v-model="email" required />
+        </div>
+        <div class="form-input">
+          <label class="form-input-field-label">Password</label>
+          <input type="password"
+          class="form-input-field-input"
+          placeholder="**********"
+          id="password"
+          v-model="password"
+          required/>
+        </div>
           
-          <button class="button-log" type="submit" >Log In</button>
-          
-          
-          <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="log-in-link"/></p>
-          <!-- <p>
-            Have an account?
-            <PersonalRouter :route="route" :buttonText="buttonText"
-            class="sign-up-link" />
-          </p> -->
+        <button class="button-log" type="submit" >Log In</button>
+
+        <p>Dont have an account? <span><PersonalRouter :route="route" :buttonText="buttonText" class="log-in-link"/></span></p>
       </div>
     </form>  
   </div>

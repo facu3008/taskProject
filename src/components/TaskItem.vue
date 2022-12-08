@@ -17,9 +17,9 @@
     </div> -->
     
     <div v-show="editTask" class="input-field-task">
-        <input type="text" placeholder="Edit Title" v-model="name" />
-        <input type="text" placeholder="Edit Description" v-model="description">
-        <button @click="changeTask" class="btn-edit-ready">Editar</button>
+        <input class="input-field-task-text" type="text" placeholder={{task.title}} v-model="name" />
+        <input class="input-field-task-text" type="text" placeholder="Edit Description" v-model="description">
+        <button @click="changeTask" class="btn-edit-ready">Guardar cambios</button>
     </div>
     
 

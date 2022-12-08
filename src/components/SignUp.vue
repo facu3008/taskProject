@@ -14,10 +14,10 @@
     <form @submit.prevent="signUp" class="form-sign-in">
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
+          <label class="form-input-field-label">E-mail</label>
           <input
             type="email"
-            class="input-field"
+            class="form-input-field-input"
             placeholder="example@gmail.com"
             id="email"
             v-model="email"
@@ -25,10 +25,10 @@
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Password</label>
+          <label class="form-input-field-label">Password</label>
           <input
             type="password"
-            class="input-field"
+            class="form-input-field-input"
             placeholder="**********"
             id="password"
             v-model="password"
@@ -36,10 +36,10 @@
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
+          <label class="form-input-field-label">Confirm password</label>
           <input
             type="password"
-            class="input-field"
+            class="form-input-field-input"
             placeholder="**********"
             id="confirmPassword"
             v-model="confirmPassword"
@@ -47,13 +47,13 @@
           />
         </div>
         <button class="button-log" type="submit">Sign Up</button>
-        <p>
-          Have an account?
+        <p> Have an account? <span>
           <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
+          :route="route"
+          :buttonText="buttonText"
+          class="sign-up-link"
           />
+        </span>
         </p>
       </div>
     </form>

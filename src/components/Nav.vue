@@ -18,7 +18,7 @@
     <div>
       <ul>
         <li class="log-out-welcome">
-          <p>Welcome, user</p>
+          <p>Welcome, user <span>{{userEmail}}</span> </p>
         </li>
         <li>
           <button @click="signOut" class="button-log">Log out</button>
@@ -74,7 +74,7 @@ const signOut = async () => {
 }
 
 nav {
-  background-color: lightgray;
+  background-color: var(--colorTask);
   display: flex;
   width: 100%;
   justify-content: space-around;

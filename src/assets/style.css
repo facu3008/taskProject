@@ -1,10 +1,10 @@
 
-/* * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px red solid;
-  } */
+  /* outline: 1px red solid; */
+  }
 
 
 :root {
@@ -12,6 +12,7 @@
     --colorBlack: #000000;
     --colorRed: red;
     --colorFondo: #e3d5ca;
+    --colorTask: #BEA8AA;
     --fontSize-sm: 16px;
     --fontFamily: 'Arial, Helvetica, sans-serif';
     --fontTitle: 'Arial';
@@ -34,9 +35,21 @@
   color: black;
   text-align: center;
 }
+
+a{
+  text-decoration: none;
+  font-weight: 800;
+  color: #2E0808;
+  color: black;
+  
+}
+span{
+  font-size: 1.5em;
+  color: black;
+
+}
+
 /* SignIn Component */
-
-
 
 .container-form{
   /* background-color: #e3d5ca; */
@@ -48,16 +61,16 @@
  /* height:100vh; */
  background-repeat: no-repeat;
 }
-
+.container-form p{
+  margin-top: 0.8em;
+}
 
 .container-sign{
     display: flex;
-    margin: 50px 0;
     flex-direction: column;
     align-items: center;
-    
     width: 40vw;
-    min-width: 300px;
+    min-width: 280px;
     text-align: center;
   }
   
@@ -65,6 +78,7 @@
     text-align: center;
     font-size: 2.5em;
     margin-top: 1.5em ;
+    color: #2E0808;
   }
   /* .container-sign h4{
     text-align: center;
@@ -73,27 +87,24 @@
 
 
   .form{
-    
-     margin: 30px auto;
-    
-  }
+      margin: 30px 0;
+   }
   
   
   .form-input{
     display: flex;
-  
     flex-direction: column;
     align-items: center;
     }
   
-  .input-field-label{
-    color: #260709;
+  .form-input-field-label{
+    color: #2E0808;
     font-size: 1.5em;
     font-weight: 800;
     margin: 10px ;
   }
   
-  .input-field{
+  .form-input-field-input{
     color: #6b708d;
     font-size: 15px;
     font-weight: 400;
@@ -102,7 +113,6 @@
     height: 70px;
     padding-left: 20px;
     margin: 10px auto;
-    
     background-color: white;
     border: none;
   }
@@ -122,7 +132,7 @@ button{
     width: 100%;
     height: 50px;
     padding: 15px auto;
-    background-color: gray;
+    background-color: #2E0808;
     /* border: none; */
     border-radius: 10px;
     cursor: pointer;
@@ -145,9 +155,11 @@ button{
 
 .input-field-task{
   width: 40vw;
-  /* border-top: 1px solid #272727;
-  border-bottom: 1px solid #272727; */
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .input-field-task-text{
@@ -162,8 +174,6 @@ button{
   /* border-radius: 10px;
   border-bottom: 1px solid #272727; */
   text-align: center;
-  
-
 }
 
 .btn-add{
@@ -257,13 +267,17 @@ button{
   border-bottom: 3px solid #272727;
   border-top: 1px solid #272727;
   text-align: center;
-  background-color: #D4CBE5;
+  background-color: var(--colorTask);
   
   width: 40vw;
   height: auto;
   text-decoration: line-through;
+  font-size: 0.9rem;
   font-weight:bolder;
   color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   }
   .container-task-text-not-completed{
   border: none;
@@ -273,10 +287,14 @@ button{
   border-bottom: 3px solid #272727;
   border-top: 1px solid #272727;
   text-align: center;
-  background-color: #BEA8AA;
+  font-size: 1.2rem;
+  background-color: var(--colorTask);
   width: 40vw;
   height: auto;
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   }
 
 
@@ -324,15 +342,18 @@ button{
 }
 
 .btn-edit-ready{
-      /* background-image:url('../assets/img/send.png'); */
-      background-repeat:no-repeat;
-      background-color: var(--colorFondo);
-      height:30px;
-      width:30px;
-      background-size: cover;
-      background-position:center;
-      margin: 10px;
-      border: none;
+  font-size: 17px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  width: 90%;
+  height: 20px;
+  padding: 15px auto;
+  background-color: #2E0808;
+  /* border: none; */
+  /* border-radius: 10px; */
+  cursor: pointer;
+    
   }
 
 
@@ -380,7 +401,8 @@ button{
       display: flex;
       flex-direction: row;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+      padding-bottom: 1.5rem;
   }
 
 
@@ -452,7 +474,17 @@ button{
 }
 
 .btn-edit-ready{
-      background-image:url('../assets/img/send.png');
+  font-size: 17px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  width: 90%;
+  height: 20px;
+  padding: 15px auto;
+  margin: 5px 0 25px;
+  background-color: #2E0808;
+
+      /* background-image:url('../assets/img/send.png');
       background-repeat:no-repeat;
       
       height:30px;
@@ -460,7 +492,7 @@ button{
       background-size: cover;
       background-position:center;
       margin: 10px;
-      border: none;
+      border: none; */
   }
 
 
@@ -505,7 +537,8 @@ button{
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 0
+      margin-bottom: 0;
+      padding-bottom: 1.5rem;
   }
 
   /* CONDICIONAL PARA EL ESTADO DE LA TAREA */
@@ -523,20 +556,25 @@ button{
   width: 70vw;
   height: auto;
   text-decoration: line-through;
+  font-size: 0.9rem;
   font-weight:bolder;
   color: gray;
-  }
-  .container-task-text-not-completed{
+  padding:10px;
+}
+.container-task-text-not-completed{
   border: none;
   /* border-radius: 10px; */
   border-radius: 25px 0px 25px 0px;
   border-bottom: 3px solid #272727;
   border-top: 1px solid #272727;
   text-align: center;
-  background-color: #BEA8AA;
+  font-size: 1.2rem;
+  background-color: var(--colorTask);
   width: 70vw;
   height: auto;
   color: black;
+  padding:10px;
+  
   }
 
 }
