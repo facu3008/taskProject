@@ -1,9 +1,12 @@
 
 
+
+
 :root {
     --colorWhite: #ffffff;
     --colorBlack: #000000;
     --colorRed: red;
+    --colorFondo: #e3d5ca;
     --fontSize-sm: 16px;
     --fontFamily: 'Arial, Helvetica, sans-serif';
     --fontTitle: 'Arial';
@@ -15,7 +18,12 @@
 /* SignIn Component */
 
 .wrapper{
-  background-color: #6b708d;
+  /* background-color: #e3d5ca; */
+  background-color: var(--colorFondo);
+  /* background-image: url(./img/background-img.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 .wrapper h1 {
@@ -79,7 +87,11 @@
   
 
 /* Botones varios */
-  .button-log{
+button{
+  cursor: pointer;
+  border-radius: 10%;
+}
+.button-log{
     
     font-size: 17px;
     text-align: center;

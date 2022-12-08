@@ -7,8 +7,8 @@
         </div>
         <div class="container-newTask">
             <div class="input-field-task">
-                <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
-                <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+                <input class="input-field-task-text" type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+                <input class="input-field-task-text" type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
             </div>
             <button @click="addTask" class="btn-add"></button>
         </div>
@@ -63,32 +63,35 @@ if(name.value.length === 0 || description.value.length === 0){
 .container-newTask{
     display: flex;
     justify-content: center;
+
 }
 
-.input-field-task input:hover{
-    padding: 10px 0;
-    margin: 15px;
+.input-field-task{
+    width: 40vw;
+    border-top: 1px solid #272727;
+    border-bottom: 1px solid #272727;
+    border-radius: 10px;
 }
 
-.input-field-task input{
-width: 90%;
-background: aquamarine;
-
+.input-field-task-text{
+    width: 90%;
+    /* background-color: var(--colorFondo); */
+    background-color: none;
+    margin: 10px auto;
     padding: 0 5px;
     outline: none;
     border: none;
-    border-radius: 10px;
-    border-bottom: 1px solid #272727;
-    /* align-content: center; */
-    /* align-items: center; */
+    /* border-radius: 10px;
+    border-bottom: 1px solid #272727; */
     text-align: center;
+    
 
 }
-
 
 .btn-add{
         background-image:url('../assets/img/add.png');
         background-repeat:no-repeat;
+        background-color: var(--colorFondo);
         height:30px;
         width:30px;
         background-size: cover;
@@ -96,6 +99,75 @@ background: aquamarine;
         margin: auto 10px;
         border: none;
     }
+     
+.btn-add:hover{
+        height:40px;
+        width:40px;
+    }
+
+
+    /* VERSION MOBILE */
+
+@media (max-width: 767px) {
+
+    .container-newTask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+/* .input-field-task input:hover{
+    padding: 10px 0;
+    margin: 15px;
+} */
+
+.input-field-task{
+    width: 70vw;
+    background-color: none;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-top: 1px solid #272727;
+    border-bottom: 1px solid #272727;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.input-field-task-text{
+    width: 90%;
+/* background: aquamarine; */
+    margin: 10px auto;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    /* border-radius: 10px;
+    border-bottom: 1px solid #272727; */
+    text-align: center;
+}
+
+
+.btn-add{
+        background-image:url('../assets/img/add.png');
+        background-repeat:no-repeat;
+        background-color: var(--colorFondo);
+        height:30px;
+        width:30px;
+        background-size: cover;
+        background-position:center;
+        margin: auto 10px;
+        border: none;
+    }
+     
+.btn-add:hover{
+        height:40px;
+        width:40px;
+    }
+
+}
+
+
 
 </style>
   

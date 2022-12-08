@@ -1,8 +1,8 @@
 <template>
 <div class="container-task">
-    <div class="container-task-text">
-        <h3 v-bind:class="task.is_complete ? `completed` : `not-completed`"> {{task.title}}</h3>
-        <p v-bind:class="task.is_complete ? `completed` : `not-completed`">{{task.description}}</p>
+    <div v-bind:class="task.is_complete ? `container-task-text-completed` : `container-task-text-not-completed`">
+        <h3 > {{task.title}}</h3>
+        <p >{{task.description}}</p>
 
     </div>
     <div class="container-task-btn">
@@ -10,17 +10,17 @@
         <button @click="deleteTask" class="btn-delete"></button>
         <button @click="editTaskFunction" class="btn-edit"></button>
         <!-- <button @click="archiveTaskFunction">Store</button> -->
-        <div v-show="editTask" class="input-field-task">
-            <input type="text" placeholder="Edit Title" v-model="name" />
-            <input type="text" placeholder="Edit Description" v-model="description">
-            <button @click="changeTask" class="btn-edit-ready"></button>
-        </div>
         <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
     </div>
     <!-- <div v-show="storeTask">
         <button @click="statusTask">Store</button>     
     </div> -->
-
+    
+    <div v-show="editTask" class="input-field-task">
+        <input type="text" placeholder="Edit Title" v-model="name" />
+        <input type="text" placeholder="Edit Description" v-model="description">
+        <button @click="changeTask" class="btn-edit-ready">Editar</button>
+    </div>
     
 
 
@@ -97,13 +97,16 @@ const statusTask = async () => {
 </script>
 
 <style>
-.completed {
+
+/* VERSION DESKTOP */
+
+/* .completed {
     text-decoration: line-through;
-    text-decoration-line: line-through;
+    
     font-weight:bolder;
     color: gray;
     min-width: 20vw;
-    /* max-width: 70vw; */
+    max-width: 70vw;
     width: 40vw;
     height: auto;
     background: white;
@@ -113,11 +116,12 @@ const statusTask = async () => {
     border-radius: 10px;
     border-bottom: 1px solid #272727;
     text-align: center;
-}
-.not-completed {
+} */
+/* EL MAX WIDT ESTABA COMENTADO */
+/* .not-completed {
     color:black;
     min-width: 20vw;
-    /* max-width: 70vw; */
+    max-width: 70vw;
     width: 40vw;
     background: white;
     padding: 0 5px;
@@ -126,7 +130,7 @@ const statusTask = async () => {
     border-radius: 10px;
     border-bottom: 1px solid #272727;
     text-align: center;
-}
+} */
 
 /* 
 button:hover{
@@ -134,8 +138,48 @@ button:hover{
     height: 10%;
 } */
 
+
+ /* .container-task-text */
+
+
+    
+     
+     
+ .container-task-text-completed{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    border-top: 1px solid #272727;
+    text-align: center;
+    background-color: #D4CBE5;
+    
+    width: 40vw;
+    height: auto;
+    text-decoration: line-through;
+    font-weight:bolder;
+    color: gray;
+    }
+    .container-task-text-not-completed{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    border-top: 1px solid #272727;
+    text-align: center;
+    background-color: #BEA8AA;
+    width: 40vw;
+    height: auto;
+    color: black;
+    }
+
+
+
+
 .container-task-btn{
     margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    margin: auto 10px;
+    align-items: center;
 }
 .btn-delete:hover{
     height:30px;
@@ -143,6 +187,7 @@ button:hover{
 }
 .btn-delete{
         background-image:url('../assets/img/delete.png');
+        background-color: var(--colorFondo);
         background-repeat:no-repeat;
         
         height:20px;
@@ -156,7 +201,24 @@ button:hover{
 .btn-edit{
         background-image:url('../assets/img/update.png');
         background-repeat:no-repeat;
-        
+        background-color: var(--colorFondo);
+        height:25px;
+        width:25px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+
+.btn-edit:hover{
+    height:40px;
+    width:40px;
+}
+
+.btn-edit-ready{
+        /* background-image:url('../assets/img/send.png'); */
+        background-repeat:no-repeat;
+        background-color: var(--colorFondo);
         height:30px;
         width:30px;
         background-size: cover;
@@ -164,6 +226,123 @@ button:hover{
         margin: 10px;
         border: none;
     }
+
+
+    .btn-edit:hover{
+    height:30px;
+    width:30px;
+}
+
+
+.btn-ready{
+        background-image:url('../assets/img/check.png');
+        background-repeat:no-repeat;
+        background-color: var(--colorFondo);
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+
+    }
+
+
+.btn-ready:hover{
+        height:30px;
+        width:30px;
+    }
+    .btn-not-ready{
+        background-image:url('../assets/img/not-check.png');
+        background-repeat:no-repeat;
+        background-color: var(--colorFondo);
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+.btn-not-ready:hover{
+        height:30px;
+        width:30px;
+    }
+
+    .container-task{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+
+.container-task-text h3, .container-task-text p{
+    min-width: 20vw;
+   
+    width: 40vw;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center;
+    
+}
+
+
+
+
+/* VERSION MOBILE */
+
+@media (max-width: 767px) {
+
+
+
+/* BOTONES */
+.container-task-btn{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    width: 50vw;
+
+    
+
+}
+.btn-delete:hover{
+    height:30px;
+    width:30px;
+}
+.btn-delete{
+        background-image:url('../assets/img/delete.png');
+        background-repeat:no-repeat;
+        height:20px;
+        width:20px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+
+    }
+.btn-edit{
+        background-image:url('../assets/img/update.png');
+        background-repeat:no-repeat;
+        
+        height:25px;
+        width:25px;
+        background-size: cover;
+        background-position:center;
+        margin: 10px;
+        border: none;
+    }
+
+.btn-edit:hover{
+    height:40px;
+    width:40px;
+}
+
 .btn-edit-ready{
         background-image:url('../assets/img/send.png');
         background-repeat:no-repeat;
@@ -213,16 +392,78 @@ button:hover{
         height:30px;
         width:30px;
     }
-
+/* +++++++++++++++++++++++++++++++++ */
     .container-task{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0
+    }
+
+    /* CONDICIONAL PARA EL ESTADO DE LA TAREA */
+    /* .container-task-text */
+
+    .container-task-text-completed{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    border-top: 1px solid #272727;
+    text-align: center;
+    background-color: #D4CBE5;
+    
+    width: 70vw;
+    height: auto;
+    text-decoration: line-through;
+    font-weight:bolder;
+    color: gray;
+    }
+    .container-task-text-not-completed{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    border-top: 1px solid #272727;
+    text-align: center;
+    background-color: #BEA8AA;
+    width: 70vw;
+    height: auto;
+    color: black;
     }
 
 
-.container-task-text h3, .container-task-text p{
-    /* min-width: 20vw;
+
+/* .completed {
+    text-decoration: line-through;
+    font-weight:bolder;
+    color: gray;
+    min-width: 20vw;
+    max-width: 70vw;
+    width: 40vw;
+    height: auto;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center;
+} */
+/* .not-completed {
+    color:black;
+    min-width: 20vw;
+    background-color: aquamarine;
+    width: 40vw;
+    background: white;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #272727;
+    text-align: center;
+} */
+
+
+/* .container-task-text h3, .container-task-text p{
+    min-width: 20vw;
    
     width: 40vw;
     background: white;
@@ -231,11 +472,11 @@ button:hover{
     border: none;
     border-radius: 10px;
     border-bottom: 1px solid #272727;
-    text-align: center; */
+    text-align: center;
    
+} */
+
 }
-
-
 
 
 </style>
