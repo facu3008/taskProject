@@ -7,13 +7,7 @@
       <router-link to="/account">Account</router-link>
     </div>
     <NewTask @getTaskHijo ="getTasks" />
-    <!-- <h1>Tasks:</h1> -->
-    <!-- <TaskItem v-for="task in tasks" :key="task.id" /> -->
-    <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task" 
-     @deleteTasksHijo="getTasks"
-     @editTasksHijo="getTasks" /> -->
-     <!-- <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @deleteTasksHijo="getTasks" @editTasksHijo="getTasks" 
-     @archiveTaskHijo="getTasks"/> -->
+   
      <TaskItem v-for="task in tasks" :key="task.id" :task="task"  @getTaskHijo="getTasks"/>
      
   </div>
@@ -35,6 +29,8 @@ const tasks = ref([]);
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async() => {
   tasks.value = await taskStore.fetchTasks();
+
+  tasks.value= tasks.value.sort((a,b)=> (a.is_complete ? 1: -1))
 };
 
 getTasks();

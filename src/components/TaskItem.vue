@@ -17,7 +17,7 @@
     </div> -->
     
     <div v-show="editTask" class="input-field-task">
-        <input class="input-field-task-text" type="text" placeholder={{task.title}} v-model="name" />
+        <input class="input-field-task-text" type="text" :placeholder="task.title" v-model="name" />
         <input class="input-field-task-text" type="text" placeholder="Edit Description" v-model="description">
         <button @click="changeTask" class="btn-edit-ready">Guardar cambios</button>
     </div>
@@ -39,8 +39,8 @@ const taskStore = useTaskStore();
 const emit = defineEmits(['getTaskHijo']);
 
 // Defino variables para valores de inputs
-const name = ref('');
-const description = ref('');
+const name = ref(props.task.title);
+const description = ref(props.task.description);
 
 
 
@@ -86,11 +86,7 @@ const statusTask = async () => {
     // emit ('archiveTaskHijo')
     emit ('getTaskHijo')
 };
-// const archiveTask = ref (false)
-// const archiveTaskFunction = () => {
-//     console.log("prbando Stores boton")
-//     archiveTask.value = !archiveTask.value   
-// };
+
 
 
 
