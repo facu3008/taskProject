@@ -97,7 +97,7 @@ const showIcon = computed(() =>
   
   try {
     console.log("Funciona?");
-    await useUserStore().signInWithGitHub(provider);
+    await useUserStore().signInWithGitHub();
     redirect.push({ path: "/" });
 
     
