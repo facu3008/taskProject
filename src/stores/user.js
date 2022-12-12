@@ -64,9 +64,14 @@ export const useUserStore = defineStore("user", {
     },
 
     async signInWithGitHub() {
-      const { data, error } = await supabase.auth.signIn({
-        provider: "github",
-      });
+      const { data, error } = await supabase.auth.signIn(
+        {
+          provider: "github",
+        },
+        {
+          redirectTo: "https://task-project-ashy.vercel.app/",
+        }
+      );
     },
 
     // async signInWithGitHub() {
