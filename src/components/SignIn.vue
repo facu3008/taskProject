@@ -33,7 +33,7 @@
     </form>  
     <div>
       <button class="button-gitHub" type="submit" @click="gitHub" ></button>
-      <button class="button-google" type="submit" @click="signInWithGoogle" ></button>
+      <button class="button-google" type="submit" @click="google" ></button>
       <button class="button-discord" type="submit" @click="discord" ></button>
 
     </div>
@@ -99,7 +99,28 @@ const showIcon = computed(() =>
   try {
     console.log("Funciona?");
     await useUserStore().signInWithGitHub();
-    // redirect.push({ path: "/" });
+    redirect.push({ path: "/" });
+
+    
+  } catch (error) {
+    // displays error message
+    errorMsg.value = error.message;
+    // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+    return;
+    errorMsg.value = "error";
+};
+  // Log In With Third Party Goolge
+
+  const google= async () => {
+  
+  try {
+    console.log("Funciona?");
+    await useUserStore().signInWithGoogle();
+    redirect.push({ path: "/" });
 
     
   } catch (error) {
@@ -123,7 +144,7 @@ const discord= async () => {
     console.log("Funciona Discord");
     
     await useUserStore().signInWithDiscord();
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
 
     
   } catch (error) {

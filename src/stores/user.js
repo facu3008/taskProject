@@ -67,19 +67,33 @@ export const useUserStore = defineStore("user", {
       const { data, error } = await supabase.auth.signIn(
         {
           provider: "github",
+        }
+        // {
+        //   redirectTo: "https://task-project-ashy.vercel.app/",
+        // }
+      );
+    },
+
+    // google
+    async signInWithGoogle() {
+      const { data, error } = await supabase.auth.signIn(
+        {
+          provider: "google",
         },
         {
-          redirectTo: "https://task-project-ashy.vercel.app/",
+          //   // redirectTo: "https://task-project-ashy.vercel.app/",
+          redirectTo: { path: "/" },
         }
       );
     },
+
     async signInWithDiscord() {
       const { data, error } = await supabase.auth.signIn(
         {
           provider: "discord",
         }
         // {
-        //   redirectTo: "https://task-project-ashy.vercel.app/",
+        //   redirectTo: { path: "/" },
         // }
       );
     },
