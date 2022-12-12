@@ -45,3 +45,9 @@ Consiste en pagina web para gestionar las tareas pendientes.
 ### 09 diciembre:
 
 - Se trabaja en Burger menu
+
+### 12 diciembre:
+
+- Autenticacion por terceros.
+  - Google
+  - Github

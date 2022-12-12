@@ -1,18 +1,18 @@
 <template>
-    <!-- <div class="container-newTask"> -->
+    <div class="container-newTask">
 
         <h1>Add a new Task</h1>
         <div v-if="showErrorMessage">
             <p class="error-text">{{ errorMessage }}</p>
         </div>
-        <div class="container-newTask">
+        <!-- <div class="newTasks"> -->
             <div class="input-field-task">
                 <input class="input-field-task-text" type="text" placeholder="Add a Task Title" v-model="name">
                 <input class="input-field-task-text" type="text" placeholder="Add a Task Description " v-model="description">
             </div>
-            <button @click="addTask" class="btn-add"></button>
-        </div>
-    <!-- </div> -->
+            <button @click="addTask" class="btn-add">Add Task</button>
+        <!-- </div> -->
+    </div>
 </template>
 
 <script setup>

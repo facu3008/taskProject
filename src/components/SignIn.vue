@@ -14,21 +14,25 @@
           <input type="email" class="form-input-field-input" placeholder="example@gmail.com" id="email"
           v-model="email" required />
         </div>
-        <div class="form-input">
+        <div class="form-input-passwword">
           <label class="form-input-field-label">Password</label>
-          <input type="password"
+          <input :type="passwordType"
           class="form-input-field-input"
           placeholder="**********"
           id="password"
           v-model="password"
           required/>
+          <button :class="showIcon" @click.prevent="hidePassword = !hidePassword" ></button>
         </div>
           
         <button class="button-log" type="submit" >Log In</button>
-
+        
+        
         <p>Dont have an account? <span><PersonalRouter :route="route" :buttonText="buttonText" class="log-in-link"/></span></p>
       </div>
     </form>  
+    <button class="button-gitHub" type="submit" @click="gitHub" ></button>
+    <button class="button-google" type="submit" @click="signInWithGoogle" ></button>
   </div>
 </div>
 </template>
@@ -46,6 +50,7 @@ const buttonText = "Sign Up";
 // Input Fields
 const email = ref("");
 const password = ref("");
+const provider = ref("")
 // const route1 = "/home";
 // const buttonText1 = "Log In";
 
@@ -72,7 +77,51 @@ const signIn = async () => {
     return;
     errorMsg.value = "error";
 };
+//Logica para mostrar contraseña
+const hidePassword = ref(true);
+const passwordType = computed(() =>
+  hidePassword.value ? "password" : "text"
+);
+const showIcon = computed(() =>
+  hidePassword.value ? "passwordIcon" : "passwordIconShow");
+  // setTimeout(() => {
+  //   hidePassword.value = !hidePassword.value;
+  //     }, 3000);
+  
+  // Log In With Third Party OAuth
+
+  const gitHub= async () => {
+  
+  try {
+    await useUserStore().signInWithGitHub(provider);
+    redirect.push({ path: "/" });
+
+    
+  } catch (error) {
+    // displays error message
+    errorMsg.value = error.message;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+    return;
+    errorMsg.value = "error";
+};
+
+//   let { data, error } = await supabase.auth.signInWithOAuth({
+//   provider: 'github'
+// })
+
 
 </script>
 
-<style></style>
+<style>
+
+
+
+
+
+
+
+</style>

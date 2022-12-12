@@ -140,6 +140,14 @@ const showMenu = ref(false)
 
 <style>
 
+.main-nav{
+  background-color: var(--colorTask);
+  padding: 0;
+}
+
+
+
+
 img{
     max-width: 100%;
   }
@@ -198,6 +206,11 @@ img{
 
 @media (max-width: 767px) {
  
+  .main-nav{
+  background-color: var(--colorTask);
+  padding: 30px;
+}
+
   img{
     max-width: 100%;
   }
@@ -234,7 +247,7 @@ img{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding-top: 50px
+    
 
     /* transform: translateY(0); */
   }

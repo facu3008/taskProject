@@ -63,6 +63,12 @@ export const useUserStore = defineStore("user", {
       }
     },
 
+    // async signInWithGitHub() {
+    //   console.log("Funciona?");
+    //   const { data, error } = await supabase.auth.signInWithOAuth({
+    //     provider: "github",
+    //   });
+    // },
     async signOut() {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
@@ -79,3 +85,9 @@ export const useUserStore = defineStore("user", {
     ],
   },
 });
+
+async function signInWithGitHub() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+  });
+}
