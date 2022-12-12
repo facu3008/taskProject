@@ -88,25 +88,13 @@ export const useUserStore = defineStore("user", {
       const { data, error } = await supabase.auth.signIn(
         {
           provider: "discord",
+        },
+        {
+          redirectTo: "https://task-project-facu3008.vercel.app/",
         }
-        // {
-        //   redirectTo: { path: "/" },
-        // }
       );
     },
 
-    // async function signInWithDiscord() {
-    //   const { data, error } = await supabase.auth.signInWithOAuth({
-    //     provider: 'discord',
-    //   })
-    // }
-
-    // async signInWithGitHub() {
-    //   console.log("Funciona?");
-    //   const { data, error } = await supabase.auth.signInWithOAuth({
-    //     provider: "github",
-    //   });
-    // },
     async signOut() {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
