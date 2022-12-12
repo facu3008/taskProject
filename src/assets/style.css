@@ -193,7 +193,18 @@ button{
       background-size: cover;
       background-position:center;
       margin: 10px;
-
+  }
+.button-google{
+       background-image:url("./img/google-svgrepo-com.svg");
+      /* background-color: white; */
+      background-repeat:no-repeat;
+      height:45px;
+      width:45px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
   }
 .button-logOut{
     position: absolute;

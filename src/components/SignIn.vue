@@ -31,8 +31,11 @@
         <p>Dont have an account? <span><PersonalRouter :route="route" :buttonText="buttonText" class="log-in-link"/></span></p>
       </div>
     </form>  
-    <button class="button-gitHub" type="submit" @click="gitHub" ></button>
-    <button class="button-google" type="submit" @click="signInWithGoogle" ></button>
+    <div>
+      <button class="button-gitHub" type="submit" @click="gitHub" ></button>
+      <button class="button-google" type="submit" @click="signInWithGoogle" ></button>
+
+    </div>
   </div>
 </div>
 </template>
@@ -93,6 +96,7 @@ const showIcon = computed(() =>
   const gitHub= async () => {
   
   try {
+    console.log("Funciona?");
     await useUserStore().signInWithGitHub(provider);
     redirect.push({ path: "/" });
 
