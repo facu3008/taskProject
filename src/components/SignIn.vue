@@ -99,7 +99,7 @@ const showIcon = computed(() =>
   try {
     console.log("Funciona?");
     await useUserStore().signInWithGitHub();
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
 
     
   } catch (error) {
@@ -120,7 +120,7 @@ const showIcon = computed(() =>
   try {
     console.log("Funciona?");
     await useUserStore().signInWithGoogle();
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
 
     
   } catch (error) {
@@ -144,7 +144,7 @@ const discord= async () => {
     console.log("Funciona Discord");
     
     await useUserStore().signInWithDiscord();
-    // redirect.push({ path: "/" });
+    redirect.push({ path: "/" });
 
     
   } catch (error) {

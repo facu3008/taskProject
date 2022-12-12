@@ -63,30 +63,27 @@ export const useUserStore = defineStore("user", {
       }
     },
 
+    // Logeo con GITHUB
+
     async signInWithGitHub() {
       const { data, error } = await supabase.auth.signIn(
         {
           provider: "github",
-        }
-        // {
-        //   redirectTo: "https://task-project-ashy.vercel.app/",
-        // }
-      );
-    },
-
-    // google
-    async signInWithGoogle() {
-      const { data, error } = await supabase.auth.signIn(
-        {
-          provider: "google",
         },
         {
-          //   // redirectTo: "https://task-project-ashy.vercel.app/",
-          redirectTo: { path: "/" },
+          redirectTo: "https://task-project-facu3008.vercel.app/",
         }
       );
     },
 
+    // Logeo con GOOGLE
+    async signInWithGoogle() {
+      const { data, error } = await supabase.auth.signIn({
+        provider: "google",
+      });
+    },
+
+    // Logeo con DISCORD
     async signInWithDiscord() {
       const { data, error } = await supabase.auth.signIn(
         {
