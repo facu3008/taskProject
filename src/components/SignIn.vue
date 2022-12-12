@@ -144,7 +144,7 @@ const discord= async () => {
     console.log("Funciona Discord");
     
     await useUserStore().signInWithDiscord();
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
 
     
   } catch (error) {
