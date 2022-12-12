@@ -73,6 +73,22 @@ export const useUserStore = defineStore("user", {
         }
       );
     },
+    async signInWithDiscord() {
+      const { data, error } = await supabase.auth.signIn(
+        {
+          provider: "discord",
+        }
+        // {
+        //   redirectTo: "https://task-project-ashy.vercel.app/",
+        // }
+      );
+    },
+
+    // async function signInWithDiscord() {
+    //   const { data, error } = await supabase.auth.signInWithOAuth({
+    //     provider: 'discord',
+    //   })
+    // }
 
     // async signInWithGitHub() {
     //   console.log("Funciona?");

@@ -206,6 +206,18 @@ button{
       background-position:center;
       margin: 10px;
   }
+.button-discord{
+       background-image:url("./img/discord-v2-svgrepo-com.svg");
+      /* background-color: white; */
+      background-repeat:no-repeat;
+      height:45px;
+      width:45px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+  }
 .button-logOut{
     position: absolute;
     top: 1.6rem;
