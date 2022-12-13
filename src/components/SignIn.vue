@@ -169,7 +169,8 @@ const signInGithub = async () => {
   //await useUserStore().signInGithub();
   try {
     isSigningIn.value = true;
-    const { error } = await supabase.auth.signInWithOAuth({ provider: "github" });
+    const { error } = await supabase.auth.signIn({ provider: "github", options: {redirectTo: "https://task-project-ashy.vercel.app"}} 
+  );
     redirect.push({ path: "/" });
     if (error) {
       throw error;
