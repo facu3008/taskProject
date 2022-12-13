@@ -123,7 +123,7 @@ const showIcon = computed(() =>
   try {
     console.log("Funciona?");
     await useUserStore().signInWithGoogle();
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
 
     
   } catch (error) {
@@ -171,7 +171,7 @@ const signInGithub = async () => {
     isSigningIn.value = true;
     const { error } = await supabase.auth.signIn({ provider: "github", options: {redirectTo: "https://task-project-ashy.vercel.app"}} 
   );
-    redirect.push({ path: "/" });
+    // redirect.push({ path: "/" });
     if (error) {
       throw error;
     }
