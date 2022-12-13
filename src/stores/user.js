@@ -66,7 +66,7 @@ export const useUserStore = defineStore("user", {
     // Logeo con GITHUB
 
     async signInWithGitHub() {
-      const { data, error } = await supabase.auth.signIn(
+      const { data, error, user } = await supabase.auth.signIn(
         {
           provider: "github",
         },
@@ -74,6 +74,9 @@ export const useUserStore = defineStore("user", {
           redirectTo: "https://task-project-facu3008.vercel.app/",
         }
       );
+      if (user) {
+        this.user = user;
+      }
     },
 
     // Logeo con GOOGLE
