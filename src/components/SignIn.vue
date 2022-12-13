@@ -170,6 +170,7 @@ const signInGithub = async () => {
   try {
     isSigningIn.value = true;
     const { error } = await supabase.auth.signIn({ provider: "github" });
+    redirect.push({ path: "/" });
     if (error) {
       throw error;
     }
