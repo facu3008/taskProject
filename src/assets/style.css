@@ -265,7 +265,11 @@ button{
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
+  margin: auto;
+
 }
+
 
 .input-field-task-text{
   width: 90%;
@@ -290,80 +294,24 @@ button{
   }
    
 
-  /* VERSION MOBILE */
-
-@media (max-width: 767px) {
-
-
-  .button-logOut{
-    position: absolute;
-    top: 6rem;
-    right: 1rem;
-    font-size: 17px;
-    text-align: center;
+  .btn-edit-ready{
     font-size: 17px;
     text-align: center;
     align-items: center;
-    /* color: white; */
-    width: 4rem;
-    height: 2.5rem;
+    color: white;
+    width: 50%;
+    height: 20px;
     padding: 15px auto;
-    /* background-color: #2E0808; */
-    /* border: none; */
-    border-radius: 10px;
+    margin: 10PX;
+    background-color: #2E0808;
     cursor: pointer;
-    box-shadow: 2px 2px #2E0808 ;
-    } 
+    }
 
 
-  .container-newTask{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-}
 
 
-.input-field-task{
-    width: 40vw;
-    border-radius: 10px;
-    display: flex;
-
-}
-.input-field-task-text{
-  width: 90%;
-/* background: aquamarine; */
-  margin: 10px auto;
-  padding: 0 5px;
-  outline: none;
-  border: none;
-  /* border-radius: 10px;
-  border-bottom: 1px solid #272727; */
-  text-align: center;
-}
-
-
-/* .btn-add{ */
-      /* background-image:url('../assets/img/add.png');
-      background-repeat:no-repeat;
-      background-color: var(--colorFondo);
-      height:40px;
-      width:40px;
-      background-size: cover;
-      background-position:center;
-      margin: auto 10px;
-      border: none; */
-  
-   
-
-
-}
 /* TAREAS AGREGADAS */
-
     
- /* VERSION DESKTOP */
-     
-     
  .container-task-text-completed{
   border: none;
   margin-left: 4rem;
@@ -371,14 +319,14 @@ button{
   border-bottom: 3px solid #272727;
   border-top: 1px solid #272727;
   text-align: center;
-  background-color: var(--colorTask);
+  background-color: #ffcf78;
+  color: white;
   
   width: 50vw;
   height: auto;
   text-decoration: line-through;
   font-size: 0.9rem;
   font-weight:bolder;
-  color: gray;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -393,16 +341,14 @@ button{
   border-top: 1px solid #272727;
   text-align: center;
   font-size: 1.2rem;
-  background-color: orange;
+  background-color: var(--colorTask);
+  color: white;
   width: 50vw;
   height: auto;
-  /* color: white; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   }
-
-
 
 
 .container-task-btn{
@@ -446,26 +392,6 @@ button{
       background-position:center;
       margin: 10px;
       
-  }
-
-.btn-edit:hover{
-  height:40px;
-  width:40px;
-}
-
-.btn-edit-ready{
-  font-size: 17px;
-  text-align: center;
-  align-items: center;
-  color: white;
-  width: 90%;
-  height: 20px;
-  padding: 15px auto;
-  background-color: #2E0808;
-  /* border: none; */
-  /* border-radius: 10px; */
-  cursor: pointer;
-    
   }
 
 
@@ -515,8 +441,8 @@ button{
       display: flex;
       flex-direction: row;
       justify-content: center;
-      margin-bottom: 0;
-      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      /* padding-bottom: 1.5rem; */
   }
 
 
@@ -533,39 +459,56 @@ button{
   text-align: center;
   
 }
-
-
-
-
 /* VERSION MOBILE */
 
 @media (max-width: 767px) {
 
 
+  .button-logOut{
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    font-size: 17px;
+    text-align: center;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    /* color: white; */
+    width: 4rem;
+    height: 2.5rem;
+    padding: 15px auto;
+    /* background-color: #2E0808; */
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #2E0808 ;
+    } 
 
-/* BOTONES */
 
-/* .container-task{
-  
-} */
-
+  .container-newTask{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
 
 .container-task-btn{
   display:flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 5px auto;
   width: 50vw;
   position: relative;
-  bottom: 1.5em
+  bottom: 1.5em;
+  right: 0;
 
   
 
 }
 .btn-delete:hover{
-  height:30px;
-  width:30px;
+  height:35px;
+  width:35px;
 }
 .btn-delete{
       background-image:url('../assets/img/delete.png');
@@ -603,17 +546,12 @@ button{
   width: 90%;
   height: 20px;
   padding: 15px auto;
-  margin: 5px 0 25px;
+  margin: 10px;
   background-color: #2E0808;
-   
+  cursor: pointer;
   }
 
-
-  .btn-edit:hover{
-  height:30px;
-  width:30px;
-}
-
+  
 
 .btn-ready{
   background-image:url('../assets/img/check.png');
@@ -656,8 +594,9 @@ button{
       flex-direction: column;
       align-items: center;
       margin-bottom: 0;
-      padding-bottom: 1.5rem;
+      /* padding-bottom: 1.5rem; */
   }
+
 
   /* CONDICIONAL PARA EL ESTADO DE LA TAREA */
   /* .container-task-text */
@@ -670,13 +609,13 @@ button{
     /* border: 1px solid; */
     border-top: 3px solid #272727;
     text-align: center;
-    background-color: white;
+    background-color: #ffcf78;
+    color: gray;
     width: 50vw;
     /* height: auto; */
     text-decoration: line-through;
     font-size: 0.9rem;
     font-weight: bolder;
-    color: gray;
     padding: 10px;
     margin-left: 0;
 }
@@ -690,14 +629,29 @@ button{
   text-align: center;
   font-size: 1.2rem;
   background-color: var(--colorTask);
+  color: white;
   width: 50vw;
   min-height: 5rem;
-  color: white;
   padding:10px;
   
   }
+  .input-field-task{
+    width: 40vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    
+  }
+  
+
+
 
 }
+
+
 
 
  /* Account View */

@@ -120,7 +120,7 @@ const showIcon = computed(() =>
   try {
     console.log("Funciona?");
     await useUserStore().signInWithGoogle();
-    // redirect.push({ path: "/" });
+    redirect.push({ path: "/" });
 
     
   } catch (error) {
