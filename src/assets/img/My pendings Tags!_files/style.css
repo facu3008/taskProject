@@ -58,7 +58,7 @@ span{
 .container-form{
   /* background-color: #e3d5ca; */
   /* background-color: var(--colorFondo); */
- background-image: url(../assets/img/background-img.jpg);
+ background-image: url(/src/assets/img/background-img.jpg);
  background-size: cover;
  background-position: center;
  width:100vw;
@@ -134,7 +134,7 @@ span{
     position: relative;
   }    
   .passwordIcon{
-    background-image: url(../assets/img/eye-svgrepo-com.svg);
+    background-image: url(/src/assets/img/eye-svgrepo-com.svg);
     background-repeat: no-repeat;
     background-size: 20px; 
     width: 20px;
@@ -147,7 +147,7 @@ span{
   }
   
   .passwordIconShow{
-    background-image: url(../assets/img/eye-closed-svgrepo-com.svg);
+    background-image: url(/src/assets/img/eye-closed-svgrepo-com.svg);
     background-repeat: no-repeat;
     background-size: 20px; 
     width: 20px;
@@ -184,7 +184,7 @@ button{
     
   } 
 .button-gitHub{
-       background-image:url("./img/logo-github-svgrepo-com.svg");
+       background-image:url("/src/assets/img/logo-github-svgrepo-com.svg");
       /* background-color: white; */
       background-repeat:no-repeat;
       height:45px;
@@ -196,7 +196,7 @@ button{
       margin: 10px;
   }
 .button-google{
-       background-image:url("./img/google-svgrepo-com.svg");
+       background-image:url("/src/assets/img/google-svgrepo-com.svg");
       /* background-color: white; */
       background-repeat:no-repeat;
       height:45px;
@@ -208,7 +208,7 @@ button{
       margin: 10px;
   }
 .button-discord{
-       background-image:url("./img/discord-v2-svgrepo-com.svg");
+       background-image:url("/src/assets/img/discord-v2-svgrepo-com.svg");
       /* background-color: white; */
       background-repeat:no-repeat;
       height:45px;
@@ -271,10 +271,9 @@ button{
       }
       .newTask-item-input-field{
         /* border: none; */
-        
         background-color: lightgray;
-        margin: 5px;
-        padding: 0.2rem;
+        margin: 1px;
+        padding: 1rem;
       }
 
   .btn-add{
@@ -318,7 +317,7 @@ button{
   /* margin-top: 40px; */
   min-width: 280px;
   width: 30vw;
-  margin: 2rem auto;
+  margin: 3rem auto;
 }
 .container-task:hover{
   box-shadow: 1px 1px 3px 3px #264653bb;
@@ -367,7 +366,7 @@ button{
   width:30px;
 }
 .btn-delete{
-      background-image:url('../assets/img/delete.png');
+      background-image:url('/src/assets/img/delete.png');
       background-color: white;
       background-repeat:no-repeat;
       height:25px;
@@ -382,7 +381,7 @@ button{
 
   }
 .btn-edit{
-      background-image:url('../assets/img/update.png');
+      background-image:url('/src/assets/img/update.png');
       background-color: white;
       background-repeat:no-repeat;
       height:25px;
@@ -403,7 +402,7 @@ button{
 
 
 .btn-ready{
-      background-image:url('../assets/img/check.png');
+      background-image:url('/src/assets/img/check.png');
       background-color: white;
       background-repeat:no-repeat;
       height:25px;
@@ -423,7 +422,7 @@ button{
       width:30px;
   }
   .btn-not-ready{
-      background-image:url('../assets/img/not-check.png');
+      background-image:url('/src/assets/img/not-check.png');
       background-color: white;
       background-repeat:no-repeat;
       height:25px;
@@ -478,7 +477,7 @@ button{
   width:35px;
 }
 .btn-delete{
-      background-image:url('../assets/img/delete.png');
+      background-image:url('/src/assets/img/delete.png');
       background-repeat:no-repeat;
       height:30px;
       width:30px;
@@ -488,7 +487,7 @@ button{
 
   }
 .btn-edit{
-      background-image:url('../assets/img/update.png');
+      background-image:url('/src/assets/img/update.png');
       background-repeat:no-repeat;
       height:30px;
       width:30px;
@@ -512,7 +511,7 @@ button{
   
 
 .btn-ready{
-  background-image:url('../assets/img/check.png');
+  background-image:url('/src/assets/img/check.png');
   background-color: white;
   background-repeat:no-repeat;
   height:25px;
@@ -547,19 +546,6 @@ button{
       width:30px;
   }
 /* +++++++++++++++++++++++++++++++++ */
-
-/* new task */
-
-.newTask-item-input{
-  
-  width: 60vw;
-  margin: auto;
-    
-}
-
-
-
-/* task */
 
 .mainContainer{
   

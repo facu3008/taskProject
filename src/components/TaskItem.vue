@@ -1,30 +1,34 @@
 <template>
-<div class="container-task">
-    <div v-bind:class="task.is_complete ? `container-task-text-completed` : `container-task-text-not-completed`">
-        <h3 > {{task.title}}</h3>
-        <p >{{task.description}}</p>
+    <!-- <div class="mainContainer"> -->
+        
+        <div class="container-task">
+            <div id="task-item">
 
-    </div>
-    <div class="container-task-btn">
+                <div v-bind:class="task.is_complete ? `container-task-text-completed` : `container-task-text-not-completed`">
+                    <h3 > {{task.title}}</h3>
+                    <p >{{task.description}}</p>
 
-        <button @click="deleteTask" class="btn-delete"></button>
-        <button @click="editTaskFunction" class="btn-edit"></button>
-        <!-- <button @click="archiveTaskFunction">Store</button> -->
-        <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
-    </div>
-    <!-- <div v-show="storeTask">
-        <button @click="statusTask">Store</button>     
-    </div> -->
-    
-    <div v-show="editTask" class="input-field-task">
-        <input class="input-field-task-text" type="text" :placeholder="task.title" v-model="name" />
-        <input class="input-field-task-text" type="text" placeholder="Edit Description" v-model="description">
-        <button @click="changeTask" class="btn-edit-ready">Guardar cambios</button>
-    </div>
-    
+                </div>
+                <div class="task-item-btn">
+                    <button @click="deleteTask" class="btn-delete"></button>
+                    <button @click="editTaskFunction" class="btn-edit"></button>
+                    <!-- <button @click="archiveTaskFunction">Store</button> -->
+                    <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
+                </div>
+                 <div v-show="editTask" class="task-item-input">
+                <input class="task-item-input-field" type="text" :placeholder="task.title" v-model="name" />
+                <input class="task-item-input-field" type="text" placeholder="Edit Description" v-model="description">
+                <button @click="changeTask" class="btn-edit-ready">Guardar cambios</button>
+            </div>
+            </div>
+            <!-- <div v-show="storeTask">
+                <button @click="statusTask">Store</button>     
+            </div> -->
+            
+           
 
-
-</div>
+        </div>
+<!-- </div> -->
 </template>
 
 <script setup>
