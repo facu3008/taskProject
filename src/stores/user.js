@@ -78,7 +78,7 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con GOOGLE
     async signInWithGoogle() {
-      const { data, error } = await supabase.auth.signInWithOAuth(
+      const { data, error } = await supabase.auth.signIn(
         {
           provider: "google",
         }
