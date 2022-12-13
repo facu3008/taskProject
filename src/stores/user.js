@@ -53,13 +53,6 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        // const { data: profile } = await supabase
-        // .from('profiles')
-        // .select()
-        // .match({ user_id: this.user.id })
-
-        // if (profile) this.profile = profile[0];
-        // console.log('profile in store: ', profile);
       }
     },
 
@@ -74,6 +67,7 @@ export const useUserStore = defineStore("user", {
           redirectTo: "https://task-project-facu3008.vercel.app/",
         }
       );
+      if (error) throw error;
       if (user) {
         this.user = user;
       }
@@ -81,7 +75,7 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con GOOGLE
     async signInWithGoogle() {
-      const { data, error } = await supabase.auth.signIn(
+      const { data, error, user } = await supabase.auth.signIn(
         {
           provider: "google",
         }
@@ -89,11 +83,15 @@ export const useUserStore = defineStore("user", {
         //   redirectTo: "https://task-project-ashy.vercel.app",
         // }
       );
+      if (error) throw error;
+      if (user) {
+        this.user = user;
+      }
     },
 
     // Logeo con DISCORD
     async signInWithDiscord() {
-      const { data, error } = await supabase.auth.signIn(
+      const { data, error, user } = await supabase.auth.signIn(
         {
           provider: "discord",
         },
@@ -101,6 +99,10 @@ export const useUserStore = defineStore("user", {
           redirectTo: "https://task-project-facu3008.vercel.app/",
         }
       );
+      if (error) throw error;
+      if (user) {
+        this.user = user;
+      }
     },
 
     async signOut() {
