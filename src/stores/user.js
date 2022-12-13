@@ -101,9 +101,7 @@ export const useUserStore = defineStore("user", {
     },
 
     async signOut() {
-      const { error } = await supabase.auth.signOut({
-        redirectTo: "https://task-project-facu3008.vercel.app/",
-      });
+      const { error } = await supabase.auth.signOut();
       if (error) throw error;
     },
   },
