@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   /* outline: 1px red solid; */
+  font-family: Arial, Helvetica, sans-serif;
   }
 
 
@@ -12,6 +13,9 @@
     --colorBlack: #000000;
     --colorRed: red;
     --colorFondo: #e3d5ca;
+    --fondo1: #A1CDA8;
+    --fondo2: #C5E7E2;
+
     --colorTask: #BEA8AA;
     --colorTask: #2E0808;
     --fontSize-sm: 16px;
@@ -24,7 +28,7 @@
 
 .wrapper{
   /* background-color: #e3d5ca; */
-  background-color: var(--colorFondo);
+  background-color: #A1CDA8;
   /* background-image: url(./img/4k-pencil-writing-tools-notebook-wallpaper-preview.jpg); */
   background-size: cover;
   background-position: center;
@@ -251,28 +255,30 @@ button{
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      background-color: #fafafa;
+      background-color: #C5E7E2;
       padding: 10px 20px;
       border-radius: 22px;
-      min-width: 280px;
+      /* min-width: 280px; */
       /* width: 320px; */
       margin: 1rem auto;
       width: 80vw;
       
     }
     
-    
+    h1{
+      margin: 2rem;
+    }
       .newTask-item-input{
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 40vw;
-        margin: 1rem auto;
+        margin: 1.5rem auto;
       }
       .newTask-item-input-field{
-        /* border: none; */
+        border: none;
         
-        background-color: lightgray;
+        background-color: white;
         margin: 5px;
         padding: 0.2rem;
       }
@@ -304,8 +310,10 @@ button{
   flex-wrap: wrap;
   width: 80vw;
   margin: 1rem auto;
-  background-color: orange;
+  /* background-color: orange; */
   border-radius: 1rem;
+  background-color: var(--fondo2);
+  border: none;
 }
 
 .container-task{
@@ -319,6 +327,7 @@ button{
   min-width: 280px;
   width: 30vw;
   margin: 2rem auto;
+  /* background-color: #A1CDA8; */
 }
 .container-task:hover{
   box-shadow: 1px 1px 3px 3px #264653bb;
@@ -329,11 +338,13 @@ button{
     flex-direction: column;
     width: auto;
     align-items: center;
+    
 }
 .task-item-btn{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 1rem auto;
 }
 .task-item-input{
   display: flex;
@@ -352,16 +363,13 @@ button{
    font-style: italic;
    text-decoration: line-through;
    
+   margin: 1rem auto;
 }
 .container-task-text-not-completed{
     color: red;
-   
+    margin: 1rem auto;
   }
 
-
-.container-task-btn{
-
-}
 .btn-delete:hover{
   height:30px;
   width:30px;
@@ -376,8 +384,7 @@ button{
       border-radius: 50%;      
       background-size: cover;
       background-position:center;
-      /* margin: 10px; */
-      /* padding: 10px; */
+      margin: 0 1rem;
       
 
   }
@@ -391,7 +398,7 @@ button{
       border-radius: 50%;      
       background-size: cover;
       background-position:center;
-      margin: 10px;
+      margin: 0 1rem;
       
   }
 
@@ -411,7 +418,7 @@ button{
       border: 1px solid black;
       background-size: cover;
       background-position:center;
-      margin: 10px;
+      margin: 0 1rem
       
 
   }
@@ -465,83 +472,22 @@ button{
     box-shadow: 2px 2px #2E0808 ;
     } 
 
-
-  
-
-.container-task-btn{
-
-  
-
-}
 .btn-delete:hover{
   height:35px;
   width:35px;
 }
-.btn-delete{
-      background-image:url('../assets/img/delete.png');
-      background-repeat:no-repeat;
-      height:30px;
-      width:30px;
-      background-size: cover;
-      background-position:center;
-      margin: 10px;
-
-  }
-.btn-edit{
-      background-image:url('../assets/img/update.png');
-      background-repeat:no-repeat;
-      height:30px;
-      width:30px;
-      border: 2px solid green;
-      border-radius: 50%;
-      background-size: cover;
-      background-position:center;
-      margin: 10px;
-      
-  }
 
 .btn-edit:hover{
   height:40px;
   width:40px;
 }
 
-.btn-edit-ready{
-
-  }
-
-  
-
-.btn-ready{
-  background-image:url('../assets/img/check.png');
-  background-color: white;
-  background-repeat:no-repeat;
-  height:25px;
-  width:25px;
-  /* border: 1px solid black; */
-  background-size: cover;
-  background-position:center;
-  margin: 10px;
-      
-  }
-
 
 .btn-ready:hover{
       height:30px;
       width:30px;
   }
-.btn-not-ready{
-  background-image: url(/src/assets/img/not-check.png);
-  background-color: white;
-  background-repeat: no-repeat;
-  height: 25px;
-  width: 25px;
-  /* border: 1px solid black; */
-  background-size: cover;
-  background-position: center;
-  margin: 10px;
-  border: none;
-      
-  }
+
 .btn-not-ready:hover{
       height:30px;
       width:30px;
@@ -566,33 +512,18 @@ button{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--fondo2);
   }
 
 
 
   .container-task{
-    margin: 1rem;
+    margin: 1rem auto;
     min-width: 220px;
-    width: 40vw;
-
-  }
-
-
-  /* CONDICIONAL PARA EL ESTADO DE LA TAREA */
-  /* .container-task-text */
-
-  .container-task-text-completed{
-   
-}
-.container-task-text-not-completed{
- 
-  }
-  .input-field-task{
-   
+    width: 60vw;
     
-  }
-  
 
+  }
 
 
 }

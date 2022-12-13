@@ -141,47 +141,27 @@ const showMenu = ref(false)
 <style>
 
 .main-nav{
-  background-color: var(--colorTask);
+  background-color: #AD9BAA;
   padding: 0;
 }
-
-
-
 
 img{
     max-width: 100%;
   }
  .toggle-menu{
     display: none;
-    /* position: absolute;
-    top: 0.5rem;
-    right: 1.5rem;
-    cursor: pointer;
-    filter: invert(-1);
-    width: 40px;
-    z-index: 1; */
+  
 
   }
 
   .main-menu--show{
     display:none
   }
-/* .main-menu{ */
-  /* display:block;
-  list-style: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center; */
-
 
 
 .showMenu{
   display: flex;
-    background-color: var(--colorTask);
+    /* background-color: var(--colorTask); */
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -207,13 +187,12 @@ img{
 @media (max-width: 767px) {
  
   .main-nav{
-  background-color: var(--colorTask);
   padding: 30px;
 }
 
-  img{
+  /* img{
     max-width: 100%;
-  }
+  } */
 
   .toggle-menu{
     display: block;
@@ -241,7 +220,7 @@ img{
   }
 
   .main-menu--show{
-    background-color: var(--colorTask);
+    /* background-color: var(--colorTask); */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
