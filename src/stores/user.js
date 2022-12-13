@@ -78,13 +78,13 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con GOOGLE
     async signInWithGoogle() {
-      const { data, error } = await supabase.auth.signIn(
+      const { data, error } = await supabase.auth.signInWithOAuth(
         {
           provider: "google",
-        },
-        {
-          redirectTo: "https://task-project-ashy.vercel.app",
         }
+        // {
+        //   redirectTo: "https://task-project-ashy.vercel.app",
+        // }
       );
     },
 
