@@ -46,24 +46,14 @@
     <div>
       <ul id="main-menu" :class="showMenu? `main-menu-user--show` : `main-menu-user`" v-if="showMenu" >
       <!-- <ul class="main-menu-user" id="main-menu"> -->
-        <li class="main-menu_item">
+        <!-- <li class="main-menu_item">
           <p >Welcome, user <span>{{userEmail}} </span> </p>
-        </li>
+        </li> -->
         <li class="main-menu_item">
-          <button @click="signOut" class="button-logOut">Log out</button>
         </li>
+        <button @click="signOut" class="button-logOut">Log out</button>
       </ul>
     </div>
-    <!-- <div>
-      <ul>
-        <li class="log-out-welcome">
-          <p>Welcome, user <span>{{userEmail}}</span> </p>
-        </li>
-        <li>
-          <button @click="signOut" class="button-log">Log out</button>
-        </li>
-      </ul>
-    </div> -->
   </nav>
 </template>
 
@@ -114,123 +104,7 @@ const showMenu = ref(false)
 
 <style>
 
-.main-nav{
-  background-color: #AD9BAA;
-  background-color: #2C2C34;
-  background-color: #042A2B;
-  padding: 0;
-}
 
-/* img{
-   
-  } */
-
-.iconTask img {
-  
-  width: 60px;
-  height: 60px;
-  display: block;
-  position: absolute;
-  top: 2rem;
-  left: 1.5rem;
-  cursor: pointer;
-  -webkit-filter: invert(100%);
-  -moz-filter: invert(100%);
-  filter: invert(90%);
-  
-  z-index: 1;
-}
-
- .toggle-menu{
-    display: none;
-  }
-
-  .main-menu--show{
-    display:none
-  }
-
-
-.showMenu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 90%;
-    padding:2rem;
-    margin-left: 5rem;
-    
-}
-
-.main-menu_item{
-    list-style: none;
-    padding: 0.5em;
-  }
-
-
-
-.main-menu_link{
-  color:white;
-  text-transform: uppercase;  
-  }
-
-.main-menu-user--show{
-  display:none
-}
-
-
-@media (max-width: 767px) {
- 
-  .main-nav{
-  padding: 30px;
-  }
-
-  .iconTask img {
-  
-    height: 40px;
-    width: 40px;
-    top: 1%;
-    left: 5%;
-
-  
-  }
-
-  .toggle-menu{
-    display: block;
-    position: absolute;
-    top: 0.5rem;
-    right: 1.5rem;
-    cursor: pointer;
-    -webkit-filter: invert(100%);
-    -moz-filter: invert(100%);
-    filter: invert(90%);
-    /* filter: invert(1); */
-    width: 40px;
-    z-index: 1;
-  }
-
-
-  .main-menu_item{
-    list-style: none;
-    padding: 0.5em;
-  }
-
-  .main-menu--show{
-    /* background-color: var(--colorTask); */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-  }
-
-  .main-menu-user--show{
-  display:contents
-  }
-  .showMenu{
-  display: none;
-  }
-
-}
 
 
 </style>
