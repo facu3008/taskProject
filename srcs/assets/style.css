@@ -29,9 +29,6 @@
 .wrapper{
   /* background-color: #e3d5ca; */
   background-color: #A1CDA8;
-  background-color: #EEEBD3;
-  
-  
   /* background-image: url(./img/4k-pencil-writing-tools-notebook-wallpaper-preview.jpg); */
   background-size: cover;
   background-position: center;
@@ -149,7 +146,7 @@ span{
     background-position: center;
     border: none;
     position: absolute;
-    right: 2.5rem;
+    right: 1.5rem;
     top: 5.2rem;
   }
   
@@ -162,7 +159,7 @@ span{
     background-position: center;
     border: none;
     position: absolute;
-    right: 2.5rem;
+    right: 1.5rem;
     top: 5.2rem;
   }
 
@@ -227,12 +224,7 @@ button{
       margin: 10px;
   }
 .button-logOut{
-
-  background-image: url(./img/logout-svgrepo-com.svg);
-  background-repeat:no-repeat;
-      height:45px;
-      width:45px;
-    /* position: absolute;
+    position: absolute;
     top: 1.6rem;
     right: 1rem;
     font-size: 17px;
@@ -240,13 +232,15 @@ button{
     font-size: 17px;
     text-align: center;
     align-items: center;
+    /* color: white; */
     width: 4rem;
     height: 2.5rem;
     padding: 15px auto;
-    border: none;
+    /* background-color: #2E0808; */
+    /* border: none; */
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 2px 2px #2E0808 ; */
+    box-shadow: 2px 2px #2E0808 ;
     } 
 
 
@@ -262,9 +256,10 @@ button{
       justify-content: center;
       text-align: center;
       background-color: #C5E7E2;
-      background-color: #F34213;
       padding: 10px 20px;
       border-radius: 22px;
+      /* min-width: 280px; */
+      /* width: 320px; */
       margin: 1rem auto;
       width: 80vw;
       
@@ -279,7 +274,6 @@ button{
         justify-content: center;
         width: 40vw;
         margin: 1.5rem auto;
-        padding: 1rem;
       }
       .newTask-item-input-field{
         border: none;
@@ -291,22 +285,15 @@ button{
 
   .btn-add{
       
-    margin: 0 auto 10px;
-    padding: 10px 10px;
-    background-color: #042A2B;
-    width: 10rem;
-    color: white;
-    border: none;
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: var(--colorTask);
+  color: white;
   }
    
 
   .btn-edit-ready{
-    margin: 10px;
-    padding: 10px 10px;
-    background-color: #042A2B;
-    /* width: 10rem; */
-    color: white;
-    border: none;
+    
     }
 
 
@@ -323,10 +310,9 @@ button{
   flex-wrap: wrap;
   width: 80vw;
   margin: 1rem auto;
-  padding: 1rem;
+  /* background-color: orange; */
   border-radius: 1rem;
   background-color: var(--fondo2);
-  background-color: #F34213;
   border: none;
 }
 
@@ -342,7 +328,6 @@ button{
   width: 30vw;
   margin: 2rem auto;
   /* background-color: #A1CDA8; */
-  background-color: #EEEBD3;
 }
 .container-task:hover{
   box-shadow: 1px 1px 3px 3px #264653bb;
@@ -367,21 +352,21 @@ button{
   justify-content: center;
 }
 .task-item-input-field{
-  border: none;
-  /* background-color: lightgray; */
-  margin: 5px;
+  /* border: none; */
+  background-color: lightgray;
+  margin: 1px;
 }
 
     
  .container-task-text-completed{
-   /* color: blue; */
+   color: blue;
    font-style: italic;
    text-decoration: line-through;
    
    margin: 1rem auto;
 }
 .container-task-text-not-completed{
-    /* color: red; */
+    color: red;
     margin: 1rem auto;
   }
 
@@ -467,21 +452,24 @@ button{
 @media (max-width: 767px) {
 
 
-
-  .btn-add{
-   
-    width: 8rem;
-    padding: 3px;
-   
-  }
-
-
-
   .button-logOut{
     position: absolute;
     top: 6rem;
     right: 1rem;
-   
+    font-size: 17px;
+    text-align: center;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    /* color: white; */
+    width: 4rem;
+    height: 2.5rem;
+    padding: 15px auto;
+    /* background-color: #2E0808; */
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #2E0808 ;
     } 
 
 .btn-delete:hover{
@@ -524,14 +512,14 @@ button{
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  background-color: var(--fondo2);
   }
 
 
 
   .container-task{
     margin: 1rem auto;
-    min-width: 200px;
+    min-width: 220px;
     width: 60vw;
     
 

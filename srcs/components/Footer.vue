@@ -9,7 +9,7 @@
 
 <style>
 .footer{
-  background-color: #042A2B;
+  background-color: var(--colorTask);
   padding: 1rem;
   /* margin: 2rem auto; */
   color: white;

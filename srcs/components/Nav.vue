@@ -1,19 +1,17 @@
 <template>
   <nav class="main-nav">
     <div id="toggle-menu" class="toggle-menu">
-    <img src="../assets/img/burgerMenu.svg" alt="hamburguer Menu" @click="showMenu = !showMenu" >
+    <img src="../assets/img/burgerMenu.svg" alt="" @click="showMenu = !showMenu" >
     <!-- @click="toggle" :class="main-menu--show" -->
-  </div>
-  <div class="iconTask">
-
-    <img src="../assets/img/logoTaskList.svg" alt="Icono de pagina"  >
-  </div>
+    </div>
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     
 
     <ul id="main-menu" :class="showMenu? `main-menu--show` : `main-menu`" v-if="showMenu"  >
         <li class="main-menu_item">
-          <router-link to="/" class="main-menu_link">Home</router-link>
+          <router-link to="/" class="main-menu_link">
+      Home
+    </router-link>
         </li>
         <li class="main-menu_item">
           <router-link to="/" class="main-menu_link">Task Manager</router-link>
@@ -66,7 +64,32 @@
     </div> -->
   </nav>
 </template>
-
+<!-- <template>
+  <nav>
+    <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>
+    <router-link to="/">
+      Home
+    </router-link>
+    <ul>
+        <li>
+          <router-link to="/">Task Manager</router-link>
+        </li>
+        <li>
+          <router-link to="/account">Your Account</router-link>
+        </li>
+    </ul>
+    <div>
+      <ul>
+        <li class="log-out-welcome">
+          <p>Welcome, user <span>{{userEmail}}</span> </p>
+        </li>
+        <li>
+          <button @click="signOut" class="button-log">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</template> -->
 
 <script setup>
 import PersonalRouter from "./PersonalRouter.vue";
@@ -74,21 +97,16 @@ import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { ref } from 'vue';
-
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
-
 // constant to save a variable that will get the user from store with a computed function imported from vue
 // const getUser = computed(() => useUserStore().user);
 const getUser = useUserStore().user;
-
 // constant that calls user email from the useUSerStore
 const userEmail = getUser.email;
-
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
-
 const signOut = async () => {
   try{
     await useUserStore().signOut();
@@ -105,115 +123,76 @@ const signOut = async () => {
   return;
   errorMsg.value = "error";
 };
-
 // Funcionalidad al menu hamburguesa
-
 const showMenu = ref(false)
-
 </script>
 
 <style>
-
 .main-nav{
   background-color: #AD9BAA;
-  background-color: #2C2C34;
-  background-color: #042A2B;
   padding: 0;
 }
-
-/* img{
-   
-  } */
-
-.iconTask img {
-  
-  width: 60px;
-  height: 60px;
-  display: block;
-  position: absolute;
-  top: 2rem;
-  left: 1.5rem;
-  cursor: pointer;
-  -webkit-filter: invert(100%);
-  -moz-filter: invert(100%);
-  filter: invert(90%);
-  
-  z-index: 1;
-}
-
+img{
+    max-width: 100%;
+  }
  .toggle-menu{
     display: none;
+  
   }
-
   .main-menu--show{
     display:none
   }
-
-
 .showMenu{
-    display: flex;
+  display: flex;
+    /* background-color: var(--colorTask); */
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    width: 90%;
-    padding:2rem;
-    margin-left: 5rem;
-    
+    align-items: center;
+    width: 100%;
+    padding:2rem
+    /* padding-top: 50px */
 }
-
 .main-menu_item{
     list-style: none;
     padding: 0.5em;
   }
-
-
-
 .main-menu_link{
   color:white;
-  text-transform: uppercase;  
-  }
-
-.main-menu-user--show{
-  display:none
+  text-transform: uppercase;
+  
 }
-
-
 @media (max-width: 767px) {
  
   .main-nav{
   padding: 30px;
-  }
-
-  .iconTask img {
-  
-    height: 40px;
-    width: 40px;
-    top: 1%;
-    left: 5%;
-
-  
-  }
-
+}
+  /* img{
+    max-width: 100%;
+  } */
   .toggle-menu{
     display: block;
     position: absolute;
     top: 0.5rem;
     right: 1.5rem;
     cursor: pointer;
-    -webkit-filter: invert(100%);
-    -moz-filter: invert(100%);
-    filter: invert(90%);
-    /* filter: invert(1); */
+    filter: invert(-1);
     width: 40px;
     z-index: 1;
   }
-
-
+  /* .main-menu {
+    list-style: none;
+    background-color: var(--colorTask);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; 
+  } */
   .main-menu_item{
     list-style: none;
     padding: 0.5em;
   }
-
   .main-menu--show{
     /* background-color: var(--colorTask); */
     display: flex;
@@ -221,16 +200,40 @@ const showMenu = ref(false)
     justify-content: space-around;
     align-items: center;
     width: 100%;
-  }
-
-  .main-menu-user--show{
-  display:contents
+    
+    /* transform: translateY(0); */
   }
   .showMenu{
-  display: none;
-  }
-
+ display: none;
 }
-
-
+}
+/* de acapara abajo era lo original */
+.navbar-img {
+  width: 90px;
+}
+/* nav {
+  background-color: var(--colorTask);
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+/* @media (max-width: 767px) {
+  nav {
+  background-color: var(--colorTask);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  transform: translateY(-100%);
+}
+} */
 </style>

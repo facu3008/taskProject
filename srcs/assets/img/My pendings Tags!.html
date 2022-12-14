@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module" src="./My pendings Tags!_files/client"></script>
+
+    
+    <link rel="icon" href="http://localhost:5173/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./My pendings Tags!_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./My pendings Tags!_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./My pendings Tags!_files/style.css">
+
+    <!-- <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'> -->
+
+    <!-- <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css"> -->
+    <title>My pendings Tags!</title>
+  <style type="text/css">
+.main-nav{
+  background-color: var(--colorTask);
+  padding: 0;
+}
+img{
+    max-width: 100%;
+}
+.toggle-menu{
+    display: none;
+    /* position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    filter: invert(-1);
+    width: 40px;
+    z-index: 1; */
+}
+.main-menu--show{
+    display:none
+}
+/* .main-menu{ */
+  /* display:block;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; */
+.showMenu{
+  display: flex;
+    background-color: var(--colorTask);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-items: center;
+    width: 100%;
+    padding:2rem
+    /* padding-top: 50px */
+}
+.main-menu_item{
+    list-style: none;
+    padding: 0.5em;
+}
+.main-menu_link{
+  color:white;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+.main-nav{
+  background-color: var(--colorTask);
+  padding: 30px;
+}
+img{
+    max-width: 100%;
+}
+.toggle-menu{
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    filter: invert(-1);
+    width: 40px;
+    z-index: 1;
+}
+
+  /* .main-menu {
+    list-style: none;
+    background-color: var(--colorTask);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; 
+  } */
+.main-menu_item{
+    list-style: none;
+    padding: 0.5em;
+}
+.main-menu--show{
+    background-color: var(--colorTask);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+
+    /* transform: translateY(0); */
+}
+.showMenu{
+ display: none;
+}
+}
+
+
+
+
+/* de acapara abajo era lo original */
+.navbar-img {
+  width: 90px;
+}
+
+/* nav {
+  background-color: var(--colorTask);
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* @media (max-width: 767px) {
+  nav {
+  background-color: var(--colorTask);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  transform: translateY(-100%);
+}
+} */
+
+
+
+
+
+</style><style type="text/css">
+.footer{
+  background-color: var(--colorTask);
+  padding: 1rem;
+  /* margin: 2rem auto; */
+  color: white;
+  text-align: center;
+}
+</style><style type="text/css">
+/* h1 {
+    color: var(--colorRed);
+    color: red;
+} */
+</style><style type="text/css">
+/* img {
+  width: 200px;
+  border-radius: 50%;
+} */
+</style><style type="text/css">
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* outline: 1px red solid; */
+  }
+
+
+:root {
+    --colorWhite: #ffffff;
+    --colorBlack: #000000;
+    --colorRed: red;
+    --colorFondo: #e3d5ca;
+    --colorTask: #BEA8AA;
+    --colorTask: #2E0808;
+    --fontSize-sm: 16px;
+    --fontFamily: 'Arial, Helvetica, sans-serif';
+    --fontTitle: 'Arial';
+    --fontBody: 'Helvetica';
+} 
+
+
+
+.wrapper{
+  /* background-color: #e3d5ca; */
+  background-color: var(--colorFondo);
+  /* background-image: url(./img/4k-pencil-writing-tools-notebook-wallpaper-preview.jpg); */
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  /* height: 100vh; */
+  background-repeat: no-repeat;
+}
+
+.wrapper h1 {
+
+  /* color: var(--colorRed); */
+  color: black;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  font-weight: 800;
+  color: #2E0808;
+  color: black;
+  
+}
+span{
+  font-size: 1.5em;
+  color: black;
+
+}
+
+/* SignIn Component */
+
+.container-form{
+  /* background-color: #e3d5ca; */
+  /* background-color: var(--colorFondo); */
+ background-image: url(/src/assets/img/background-img.jpg);
+ background-size: cover;
+ background-position: center;
+ width:100vw;
+ height:100vh;
+ background-repeat: no-repeat;
+}
+.container-form p{
+  margin-top: 0.8em;
+}
+
+.container-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    min-width: 280px;
+    text-align: center;
+    margin: 1rem ;
+  }
+  
+  .container-sign h3{
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 1.5em ;
+    color: #2E0808;
+  }
+  /* .container-sign h4{
+    text-align: center;
+    margin: auto;
+  } */
+
+
+  .form{
+      margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+   }
+  
+  
+  .form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  .form-input-field-label{
+    color: #2E0808;
+    font-size: 1.5em;
+    font-weight: 800;
+    margin: 10px ;
+  }
+  
+  .form-input-field-input{
+    color: #6b708d;
+    font-size: 15px;
+    font-weight: 400;
+    /* width: 80%; */
+    border-radius: 10px;
+    height: 70px;
+    padding-left: 20px;
+    margin: 10px auto;
+    background-color: white;
+    border: none;
+  }
+  
+
+  .form-input-passwword{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }    
+  .passwordIcon{
+    background-image: url(/src/assets/img/eye-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: 20px; 
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    border: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 5.2rem;
+  }
+  
+  .passwordIconShow{
+    background-image: url(/src/assets/img/eye-closed-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: 20px; 
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    border: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 5.2rem;
+  }
+
+
+
+
+/* Botones varios */
+button{
+  cursor: pointer;
+  border-radius: 10%;
+}
+.button-log{
+    
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 50px;
+    padding: 15px auto;
+    background-color: #2E0808;
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+
+    
+  } 
+.button-gitHub{
+       background-image:url("/src/assets/img/logo-github-svgrepo-com.svg");
+      /* background-color: white; */
+      background-repeat:no-repeat;
+      height:45px;
+      width:45px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+  }
+.button-google{
+       background-image:url("/src/assets/img/google-svgrepo-com.svg");
+      /* background-color: white; */
+      background-repeat:no-repeat;
+      height:45px;
+      width:45px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+  }
+.button-discord{
+       background-image:url("/src/assets/img/discord-v2-svgrepo-com.svg");
+      /* background-color: white; */
+      background-repeat:no-repeat;
+      height:45px;
+      width:45px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+  }
+.button-logOut{
+    position: absolute;
+    top: 1.6rem;
+    right: 1rem;
+    font-size: 17px;
+    text-align: center;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    /* color: white; */
+    width: 4rem;
+    height: 2.5rem;
+    padding: 15px auto;
+    /* background-color: #2E0808; */
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #2E0808 ;
+    } 
+
+
+
+/* SignUp Component */
+
+/* Home view */
+    /* NEW TASK */
+
+    .container-newTask{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background-color: #fafafa;
+      padding: 10px 20px;
+      border-radius: 22px;
+      min-width: 280px;
+      /* width: 320px; */
+      margin: 1rem auto;
+      width: 80vw;
+      
+    }
+    
+    
+      .newTask-item-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40vw;
+        margin: 1rem auto;
+      }
+      .newTask-item-input-field{
+        /* border: none; */
+        background-color: lightgray;
+        margin: 1px;
+        padding: 1rem;
+      }
+
+  .btn-add{
+      
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: var(--colorTask);
+  color: white;
+  }
+   
+
+  .btn-edit-ready{
+    
+    }
+
+
+
+
+/* TAREAS AGREGADAS */
+
+.mainContainer{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 1rem auto;
+  background-color: orange;
+  border-radius: 1rem;
+}
+
+.container-task{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #fafafa;
+  padding: 10px 20px;
+  border-radius: 22px;
+  /* margin-top: 40px; */
+  min-width: 280px;
+  width: 30vw;
+  margin: 3rem auto;
+}
+.container-task:hover{
+  box-shadow: 1px 1px 3px 3px #264653bb;
+  cursor: pointer;
+}
+.task-item{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+}
+.task-item-btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.task-item-input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.task-item-input-field{
+  /* border: none; */
+  background-color: lightgray;
+  margin: 1px;
+}
+
+    
+ .container-task-text-completed{
+   color: blue;
+   font-style: italic;
+   text-decoration: line-through;
+   
+}
+.container-task-text-not-completed{
+    color: red;
+   
+  }
+
+
+.container-task-btn{
+
+}
+.btn-delete:hover{
+  height:30px;
+  width:30px;
+}
+.btn-delete{
+      background-image:url('/src/assets/img/delete.png');
+      background-color: white;
+      background-repeat:no-repeat;
+      height:25px;
+      width:25px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      /* margin: 10px; */
+      /* padding: 10px; */
+      
+
+  }
+.btn-edit{
+      background-image:url('/src/assets/img/update.png');
+      background-color: white;
+      background-repeat:no-repeat;
+      height:25px;
+      width:25px;
+      border: 1px solid black;
+      border-radius: 50%;      
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+      
+  }
+
+
+  .btn-edit:hover{
+  height:30px;
+  width:30px;
+}
+
+
+.btn-ready{
+      background-image:url('/src/assets/img/check.png');
+      background-color: white;
+      background-repeat:no-repeat;
+      height:25px;
+      width:25px;
+      border: 1px solid black;
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+      
+
+  }
+ 
+
+
+.btn-ready:hover{
+      height:30px;
+      width:30px;
+  }
+  .btn-not-ready{
+      background-image:url('/src/assets/img/not-check.png');
+      background-color: white;
+      background-repeat:no-repeat;
+      height:25px;
+      width:25px;
+      /* border: 1px solid black; */
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+      border: none;
+  }
+.btn-not-ready:hover{
+      height:30px;
+      width:30px;
+  }
+
+
+/* VERSION MOBILE */
+
+@media (max-width: 767px) {
+
+
+  .button-logOut{
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    font-size: 17px;
+    text-align: center;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    /* color: white; */
+    width: 4rem;
+    height: 2.5rem;
+    padding: 15px auto;
+    /* background-color: #2E0808; */
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #2E0808 ;
+    } 
+
+
+  
+
+.container-task-btn{
+
+  
+
+}
+.btn-delete:hover{
+  height:35px;
+  width:35px;
+}
+.btn-delete{
+      background-image:url('/src/assets/img/delete.png');
+      background-repeat:no-repeat;
+      height:30px;
+      width:30px;
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+
+  }
+.btn-edit{
+      background-image:url('/src/assets/img/update.png');
+      background-repeat:no-repeat;
+      height:30px;
+      width:30px;
+      border: 2px solid green;
+      border-radius: 50%;
+      background-size: cover;
+      background-position:center;
+      margin: 10px;
+      
+  }
+
+.btn-edit:hover{
+  height:40px;
+  width:40px;
+}
+
+.btn-edit-ready{
+
+  }
+
+  
+
+.btn-ready{
+  background-image:url('/src/assets/img/check.png');
+  background-color: white;
+  background-repeat:no-repeat;
+  height:25px;
+  width:25px;
+  /* border: 1px solid black; */
+  background-size: cover;
+  background-position:center;
+  margin: 10px;
+      
+  }
+
+
+.btn-ready:hover{
+      height:30px;
+      width:30px;
+  }
+.btn-not-ready{
+  background-image: url(/src/assets/img/not-check.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+  /* border: 1px solid black; */
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  border: none;
+      
+  }
+.btn-not-ready:hover{
+      height:30px;
+      width:30px;
+  }
+/* +++++++++++++++++++++++++++++++++ */
+
+.mainContainer{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+
+
+  .container-task{
+    margin: 1rem;
+    min-width: 220px;
+    width: 40vw;
+
+  }
+
+
+  /* CONDICIONAL PARA EL ESTADO DE LA TAREA */
+  /* .container-task-text */
+
+  .container-task-text-completed{
+   
+}
+.container-task-text-not-completed{
+ 
+  }
+  .input-field-task{
+   
+    
+  }
+  
+
+
+
+}
+
+
+
+
+ /* Account View */
+</style><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+  <body>
+    <div id="app" data-v-app=""><div><div class="wrapper"><nav class="main-nav"><div id="toggle-menu" class="toggle-menu"><img src="./My pendings Tags!_files/burgerMenu.svg" alt=""><!-- @click="toggle" :class="main-menu--show" --></div><!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> --><!--v-if--><ul id="main-menu" class="showMenu"><li class="main-menu_item"><a aria-current="page" href="http://localhost:5173/" class="router-link-active router-link-exact-active main-menu_link"> Home </a></li><li class="main-menu_item"><a aria-current="page" href="http://localhost:5173/" class="router-link-active router-link-exact-active main-menu_link">Task Manager</a></li><li class="main-menu_item"><a href="http://localhost:5173/account" class="main-menu_link">Your Account</a></li><li class="main-menu_item"><button class="button-logOut">Log out</button></li><!-- <li class="main-menu_item">
+          <button @click="signOut" class="button-log">Log out</button>
+        </li> --></ul><div><!--v-if--></div><!-- <div>
+      <ul>
+        <li class="log-out-welcome">
+          <p>Welcome, user <span>{{userEmail}}</span> </p>
+        </li>
+        <li>
+          <button @click="signOut" class="button-log">Log out</button>
+        </li>
+      </ul>
+    </div> --></nav><!-- <div class="content"> 
+      <h3>Your account:</h3>
+      <router-link to="/account">Account</router-link>
+    </div> --><h1>Add a new Task</h1><div class="container-newTask"><!--v-if--><!-- <div class="newTasks"> --><div class="newTask-item-input"><input class="newTask-item-input-field" type="text" placeholder="Add a Task Title"><input class="newTask-item-input-field" type="text" placeholder="Add a Task Description "></div><button class="btn-add">Add Task</button><!-- </div> --></div><h1>Your list of task!</h1><div class="mainContainer"><!-- <div class="mainContainer"> --><div class="container-task"><div id="task-item"><div class="container-task-text-not-completed"><h3>dsadsadsa</h3><p>dsdasdsadsadas</p></div><div class="task-item-btn"><button class="btn-delete"></button><button class="btn-edit"></button><!-- <button @click="archiveTaskFunction">Store</button> --><button class="btn-not-ready"></button></div><div class="task-item-input" style="display: none;"><input class="task-item-input-field" type="text" placeholder="dsadsadsa"><input class="task-item-input-field" type="text" placeholder="Edit Description"><button class="btn-edit-ready">Guardar cambios</button></div></div><!-- <div v-show="storeTask">
+                <button @click="statusTask">Store</button>     
+            </div> --></div><!-- </div> --><!-- <div class="mainContainer"> --><div class="container-task"><div id="task-item"><div class="container-task-text-completed"><h3>dsadsa</h3><p>dsadsad</p></div><div class="task-item-btn"><button class="btn-delete"></button><button class="btn-edit"></button><!-- <button @click="archiveTaskFunction">Store</button> --><button class="btn-ready"></button></div><div class="task-item-input" style="display: none;"><input class="task-item-input-field" type="text" placeholder="dsadsa"><input class="task-item-input-field" type="text" placeholder="Edit Description"><button class="btn-edit-ready">Guardar cambios</button></div></div><!-- <div v-show="storeTask">
+                <button @click="statusTask">Store</button>     
+            </div> --></div><!-- </div> --><!-- <div class="mainContainer"> --><div class="container-task"><div id="task-item"><div class="container-task-text-completed"><h3>Tarea del dia</h3><p>Sacar lo del login</p></div><div class="task-item-btn"><button class="btn-delete"></button><button class="btn-edit"></button><!-- <button @click="archiveTaskFunction">Store</button> --><button class="btn-ready"></button></div><div class="task-item-input" style="display: none;"><input class="task-item-input-field" type="text" placeholder="Tarea del dia"><input class="task-item-input-field" type="text" placeholder="Edit Description"><button class="btn-edit-ready">Guardar cambios</button></div></div><!-- <div v-show="storeTask">
+                <button @click="statusTask">Store</button>     
+            </div> --></div><!-- </div> --><!-- <div class="mainContainer"> --><div class="container-task"><div id="task-item"><div class="container-task-text-completed"><h3>OTRA</h3><p>MMMASDSA</p></div><div class="task-item-btn"><button class="btn-delete"></button><button class="btn-edit"></button><!-- <button @click="archiveTaskFunction">Store</button> --><button class="btn-ready"></button></div><div class="task-item-input" style="display: none;"><input class="task-item-input-field" type="text" placeholder="OTRA"><input class="task-item-input-field" type="text" placeholder="Edit Description"><button class="btn-edit-ready">Guardar cambios</button></div></div><!-- <div v-show="storeTask">
+                <button @click="statusTask">Store</button>     
+            </div> --></div><!-- </div> --></div><h4 class="footer">© Bootcamp Frontend Ironhack | 07NOV - 16DEC 2022 </h4></div></div></div>
+    <script type="module" src="./My pendings Tags!_files/main.js.descarga"></script>
+  
+
+</body></html>
