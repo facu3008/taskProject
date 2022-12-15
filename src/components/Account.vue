@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
   import { supabase } from '../supabase'
   import { onMounted, ref, toRefs } from 'vue'
 
@@ -103,4 +103,4 @@
       <button class="button block" @click="signOut" :disabled="loading">Sign Out</button>
     </div>
   </form>
-</template>
+</template> -->

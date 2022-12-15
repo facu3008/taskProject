@@ -37,7 +37,7 @@ onMounted(async () => {
 
 setTimeout(() => {
   redirect();
-}, 200);
+}, 1000);
 </script>
 
 <style>
