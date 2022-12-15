@@ -95,7 +95,7 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con DISCORD
     async signInWithDiscord() {
-      const { data, error, user } = await supabase.auth.signInWithOAuth(
+      const { data, error, user } = await supabase.auth.signIn(
         {
           provider: "discord",
         },

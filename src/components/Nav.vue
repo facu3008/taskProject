@@ -36,7 +36,7 @@
           <router-link to="/account" class="main-menu_link">Your Account</router-link>
         </li>
         <li class="main-menu_item">
-          <button @click="signOut" class="button-logOut">Log out</button>
+          <button @click="signOut" class="button-logOut"></button>
         </li>
         <!-- <li class="main-menu_item">
           <button @click="signOut" class="button-log">Log out</button>
