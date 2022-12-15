@@ -5,7 +5,7 @@
 
 
   <div class="container-sign">
-    <h3 class="header-title">Log In to To-Do App</h3>
+    <h3 class="header-title">Task App</h3>
     
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">

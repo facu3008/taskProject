@@ -51,7 +51,7 @@
         </li> -->
         <li class="main-menu_item">
         </li>
-        <button @click="signOut" class="button-logOut">Log out</button>
+        <button @click="signOut" class="button-logOut"></button>
       </ul>
     </div>
   </nav>

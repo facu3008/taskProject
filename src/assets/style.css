@@ -89,7 +89,9 @@ span{
     text-align: center;
     margin: 1rem ;
   }
-  
+  .header-description{
+    width: 240px;
+  }
   .container-sign h3{
     text-align: center;
     font-size: 2.5em;
@@ -179,14 +181,14 @@ button{
   border-radius: 10%;
 }
 .button-log{
-    
+    margin: 1rem auto;
     font-size: 17px;
     text-align: center;
     align-items: center;
     color: white;
-    width: 100%;
+    width: 80%;
     height: 50px;
-    padding: 15px auto;
+    
     background-color: #2E0808;
     /* border: none; */
     border-radius: 10px;
@@ -335,7 +337,7 @@ button{
   
     height: 40px;
     width: 40px;
-    top: 1%;
+    top: 2%;
     left: 5%;
 
   
@@ -521,14 +523,16 @@ button{
    color: gray;
    font-style: italic;
    text-decoration: line-through;
-   
-   
    margin: 1rem auto;
 }
 .container-task-text-not-completed{
-    
     margin: 1rem auto;
   }
+
+  .container-task-text-not-completed p, .container-task-text-completed p{
+    padding-top: 1rem;
+  }
+
 
 .btn-delete:hover{
   height:30px;
