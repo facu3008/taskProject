@@ -68,7 +68,7 @@ export const useUserStore = defineStore("user", {
           provider: "github",
         },
         {
-          redirectTo: "https://task-project-facu3008.vercel.app/",
+          redirectTo: "https://task-project-ashy.vercel.app/",
         }
       );
       if (error) throw error;

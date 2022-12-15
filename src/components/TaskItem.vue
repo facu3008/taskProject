@@ -1,107 +1,119 @@
 <template>
-    <!-- <div class="mainContainer"> -->
-        
-        <div class="container-task">
-            <div id="task-item">
+  <!-- <div class="mainContainer"> -->
 
-                <div v-bind:class="task.is_complete ? `container-task-text-completed` : `container-task-text-not-completed`">
-                    <h3 > {{task.title}}</h3>
-                    <p >{{task.description}}</p>
-
-                </div>
-                <div class="task-item-btn">
-                    <button @click="deleteTask" class="btn-delete"></button>
-                    <button @click="editTaskFunction" class="btn-edit"></button>
-                    <!-- <button @click="archiveTaskFunction">Store</button> -->
-                    <button @click="statusTask"  v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"></button>
-                </div>
-                 <div v-show="editTask" class="task-item-input">
-                <input class="task-item-input-field" type="text" :placeholder="task.title" v-model="name" />
-                <input class="task-item-input-field" type="text" placeholder="Edit Description" v-model="description">
-                <button @click="changeTask" class="btn-edit-ready">Guardar cambios</button>
-            </div>
-            </div>
-            <!-- <div v-show="storeTask">
+  <div class="container-task">
+    <div id="task-item">
+      <div
+        v-bind:class="
+          task.is_complete
+            ? `container-task-text-completed`
+            : `container-task-text-not-completed`
+        "
+      >
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+      </div>
+      <div class="task-item-btn">
+        <button @click="deleteTask" class="btn-delete"></button>
+        <button @click="editTaskFunction" class="btn-edit"></button>
+        <!-- <button @click="archiveTaskFunction">Store</button> -->
+        <button
+          @click="statusTask"
+          v-bind:class="task.is_complete ? `btn-ready` : `btn-not-ready`"
+        ></button>
+      </div>
+      <div v-show="editTask" class="task-item-input">
+        <input
+          class="task-item-input-field"
+          type="text"
+          :placeholder="task.title"
+          v-model="name"
+        />
+        <input
+          class="task-item-input-field"
+          type="text"
+          placeholder="Edit Description"
+          v-model="description"
+        />
+        <button @click="changeTask" class="btn-edit-ready">
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+    <!-- <div v-show="storeTask">
                 <button @click="statusTask">Store</button>     
             </div> -->
-            
-           
-
-        </div>
-<!-- </div> -->
+  </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useTaskStore } from '../stores/task';
-import { supabase } from '../supabase';
+import { ref } from "vue";
+import { useTaskStore } from "../stores/task";
+import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
 
 // Defino los emits a utilizar
 // const emit = defineEmits(['deleteTasksHijo', 'editTasksHijo', 'archiveTasksHijo']);
-const emit = defineEmits(['getTaskHijo']);
+const emit = defineEmits(["getTaskHijo"]);
 
 // Defino variables para valores de inputs
 const name = ref(props.task.title);
 const description = ref(props.task.description);
 
-
-
 const props = defineProps({
-    task: Object,
+  task: Object,
 });
 
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
-const deleteTask = async() => {
-    await taskStore.deleteTask(props.task.id);
-    
-    // emit ('deleteTasksHijo')
-    emit ('getTaskHijo')
+const deleteTask = async () => {
+  await taskStore.deleteTask(props.task.id);
+
+  Swal.fire({
+    width: "40vw",
+
+    icon: "warning",
+
+    text: "Deseas eliminar la tarea seleccionada?",
+    showCancelButton: true,
+    showCloseButton: true,
+  });
+  emit("getTaskHijo");
 };
 
 // Función para  editar tarea.
 
-
 const changeTask = async () => {
-    await taskStore.changeTask(name.value, description.value, props.task.id);
-    editTask.value = false;
-    
-    // emit ('editTasksHijo');
-    emit ('getTaskHijo');
+  await taskStore.changeTask(name.value, description.value, props.task.id);
+  editTask.value = false;
+
+  // emit ('editTasksHijo');
+  emit("getTaskHijo");
 };
 
-const editTask = ref (false);
+const editTask = ref(false);
 const editTaskFunction = () => {
-    console.log("prbando edit boton")
-    editTask.value = !editTask.value
-}
+  console.log("prbando edit boton");
+  editTask.value = !editTask.value;
+};
 
-const status = ref("props.task.is_complete")
+const status = ref("props.task.is_complete");
 
 // Funcion archivar task
 const statusTask = async () => {
-    console.log("Click")
-    await taskStore.statusTask(!status.value, props.task.id);
-    
-    status.value= !status.value
+  console.log("Click");
+  await taskStore.statusTask(!status.value, props.task.id);
 
-    console.log(status.value)
-    // emit ('archiveTaskHijo')
-    emit ('getTaskHijo')
+  status.value = !status.value;
+
+  console.log(status.value);
+  // emit ('archiveTaskHijo')
+  emit("getTaskHijo");
 };
-
-
-
-
 </script>
 
-<style>
-
-
-
-
-</style>
+<style></style>
 
 <!--
 **Hints**
