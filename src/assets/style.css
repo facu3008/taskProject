@@ -307,6 +307,7 @@ button{
     width: 90%;
     padding:2rem;
     margin-left: 5rem;
+    margin-bottom: 3rem;
     
 }
 
@@ -337,7 +338,7 @@ button{
   
     height: 40px;
     width: 40px;
-    top: 2%;
+    top: 1%;
     left: 5%;
 
   
@@ -384,25 +385,6 @@ button{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* NEW TASK */
 
     .container-newTask{
@@ -413,7 +395,7 @@ button{
       background-color:var(--color-container);
       padding: 10px 20px;
       border-radius: 22px;
-      margin: 1rem auto;
+      margin: 1rem auto 3rem;
       width: 80vw;
       
     }
@@ -470,7 +452,7 @@ button{
   align-items: stretch;
   flex-wrap: wrap;
   width: 80vw;
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--color-container);
@@ -540,12 +522,13 @@ button{
 }
 .btn-delete{
       background-image:url('../assets/img/delete.png');
-      background-color: white;
+      background-color: var(--colorFondo);
       background-repeat:no-repeat;
       height:25px;
       width:25px;
       border: 1px solid black;
-      border-radius: 50%;      
+      /* border-radius: 50%;       */
+      border: none;
       background-size: cover;
       background-position:center;
       margin: 0 1rem;
@@ -553,14 +536,15 @@ button{
 
   }
 .btn-edit{
-      background-image:url('../assets/img/update.png');
-      background-color: white;
+      background-image:url('../assets/img/page-edit-svgrepo-com.svg');
+      background-color: var(--colorFondo);
       background-repeat:no-repeat;
-      height:25px;
-      width:25px;
+      height:45px;
+      width:45px;
       border: 1px solid black;
-      border-radius: 50%;      
-      background-size: cover;
+      /* border-radius: 50%;       */
+      border: none;
+      background-size:cover ;
       background-position:center;
       margin: 0 1rem;
       
@@ -568,8 +552,8 @@ button{
 
 
   .btn-edit:hover{
-  height:30px;
-  width:30px;
+  height:50px;
+  width:50px;
 }
 
 
@@ -579,7 +563,7 @@ button{
       background-repeat:no-repeat;
       height:25px;
       width:25px;
-      border: 1px solid black;
+      border: none;
       background-size: cover;
       background-position:center;
       margin: 0 1rem
