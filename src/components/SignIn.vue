@@ -36,8 +36,8 @@
       <button class="button-google" type="submit" @click="google" ></button>
       <button class="button-discord" type="submit" @click="discord" ></button>
 
-      <p v-if="isSigningIn">Please wait...</p>
-                <button v-else @click="signInGithub">Sign in via Github</button>
+      <!-- <p v-if="isSigningIn">Please wait...</p>
+                <button v-else @click="signInGithub">Sign in via Github</button> -->
     </div>
   </div>
 </div>
@@ -163,26 +163,26 @@ const discord= async () => {
 };
 
 
-const isSigningIn = ref(false);
-// Arrow functon sign n github - IT WORKS HERE
-const signInGithub = async () => {
-  //await useUserStore().signInGithub();
-  try {
-    isSigningIn.value = true;
-    const { error } = await supabase.auth.signIn({ provider: "github", options: {redirectTo: "https://task-project-ashy.vercel.app"}} 
-  );
-    // redirect.push({ path: "/" });
-    if (error) {
-      throw error;
-    }
-  } catch (error) {
-    localStorage.removeItem("redirectRoute");
-    console.error(error);
-    alert("Something went wrong! Check the console for more details");
-  } finally {
-    isSigningIn.value = false;
-  }
-};
+// const isSigningIn = ref(false);
+// // Arrow functon sign n github - IT WORKS HERE
+// const signInGithub = async () => {
+//   //await useUserStore().signInGithub();
+//   try {
+//     isSigningIn.value = true;
+//     const { error } = await supabase.auth.signIn({ provider: "github", options: {redirectTo: "https://task-project-ashy.vercel.app"}} 
+//   );
+//     // redirect.push({ path: "/" });
+//     if (error) {
+//       throw error;
+//     }
+//   } catch (error) {
+//     localStorage.removeItem("redirectRoute");
+//     console.error(error);
+//     alert("Something went wrong! Check the console for more details");
+//   } finally {
+//     isSigningIn.value = false;
+//   }
+// };
 
 
 //   let { data, error } = await supabase.auth.signInWithOAuth({

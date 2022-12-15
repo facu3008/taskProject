@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 
 import { ref } from "vue";
-const provider = ref("");
 
 export const useUserStore = defineStore("user", {
   state: () => ({
@@ -34,13 +33,6 @@ export const useUserStore = defineStore("user", {
       if (user) {
         this.user = user;
         console.log(this.user);
-
-        // const { data: profile } = await supabase.from('profiles').insert([
-        //   {
-        //     user_id: this.user.id,
-        //     username: email
-        //   }
-        // ])
       }
     },
 
@@ -63,14 +55,9 @@ export const useUserStore = defineStore("user", {
     // Logeo con GITHUB
 
     async signInWithGitHub() {
-      const { data, error, user } = await supabase.auth.signIn(
-        {
-          provider: "github",
-        },
-        {
-          redirectTo: "https://task-project-ashy.vercel.app/",
-        }
-      );
+      const { data, error, user } = await supabase.auth.signIn({
+        provider: "github",
+      });
       if (error) throw error;
       if (user) {
         this.user = user;
@@ -95,14 +82,9 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con DISCORD
     async signInWithDiscord() {
-      const { data, error, user } = await supabase.auth.signIn(
-        {
-          provider: "discord",
-        },
-        {
-          redirectTo: "https://task-project-facu3008.vercel.app/",
-        }
-      );
+      const { data, error, user } = await supabase.auth.signIn({
+        provider: "discord",
+      });
       if (error) throw error;
       if (user) {
         this.user = user;
