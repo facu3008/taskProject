@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 
 import { ref } from "vue";
+const provider = ref("");
 
 export const useUserStore = defineStore("user", {
   state: () => ({
@@ -82,9 +83,14 @@ export const useUserStore = defineStore("user", {
 
     // Logeo con DISCORD
     async signInWithDiscord() {
-      const { data, error, user } = await supabase.auth.signIn({
-        provider: "discord",
-      });
+      const { data, error, user } = await supabase.auth.signIn(
+        {
+          provider: "discord",
+        }
+        // {
+        //   redirectTo: "https://task-project-facu3008.vercel.app/",
+        // }
+      );
       if (error) throw error;
       if (user) {
         this.user = user;

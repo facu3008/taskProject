@@ -77,7 +77,7 @@ const { isConfirmed } = await Swal.fire({
   }
   else  {
         
-    // await 
+    await 
     // taskStore.deleteTask(props.task.id);
     // emit ('getTaskHijo')
     Swal.fire({
