@@ -73,7 +73,7 @@ span{
  background-size: cover;
  background-position: center;
  width:100vw;
- height:100vh;
+ min-height:100vh;
  background-repeat: no-repeat;
 }
 .container-form p{
@@ -400,6 +400,11 @@ button{
 
 
     /* NEW TASK */
+    summary::marker{
+    color: blue;
+    font-size: 1.2em;
+    } 
+
 
     .container-newTask{
       display: flex;
@@ -573,7 +578,7 @@ button{
 
 .btn-ready{
       background-image:url('../assets/img/check.png');
-      background-color: white;
+      background-color: var(--colorFondo);
       background-repeat:no-repeat;
       height:25px;
       width:25px;
@@ -593,7 +598,7 @@ button{
   }
   .btn-not-ready{
       background-image:url('../assets/img/not-check.png');
-      background-color: white;
+      background-color: var(--colorFondo);
       background-repeat:no-repeat;
       height:25px;
       width:25px;

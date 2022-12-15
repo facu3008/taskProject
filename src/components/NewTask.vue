@@ -1,6 +1,12 @@
 <template>
     <h1>Add a new Task</h1>
     <div class="container-newTask">
+        <details>
+
+        
+        <summary>Click to expand </summary>
+
+        
 
         <div v-if="showErrorMessage">
             <p class="error-text">{{ errorMessage }}</p>
@@ -12,6 +18,8 @@
             </div>
             <button @click="addTask" class="btn-add">Add Task</button>
         <!-- </div> -->
+    
+</details>
     </div>
 </template>
 
