@@ -69,6 +69,12 @@ export const useUserStore = defineStore("user", {
       if (user) {
         this.user = user;
       }
+      const { data: profile } = await supabase.from("profiles").insert([
+        {
+          user_id: this.user.id,
+          username: email,
+        },
+      ]);
     },
 
     // Logeo con GOOGLE
