@@ -138,6 +138,18 @@ span{
     background-color: white;
     border: none;
   }
+  .form-input-field-input2{
+    color: #6b708d;
+    font-size: 15px;
+    font-weight: 400;
+    /* width: 80%; */
+    border-radius: 10px;
+    height: 2rem;
+    /* padding-left: 20px; */
+    /* margin: 10px auto; */
+    background-color: white;
+    /* border: none; */
+  }
   
 
   .form-input-passwword{

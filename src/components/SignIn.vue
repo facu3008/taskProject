@@ -6,6 +6,7 @@
 
   <div class="container-sign">
     <h3 class="header-title">Task App</h3>
+    <p class="header-subtitle">Start organizing your tasks!</p>
     
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
