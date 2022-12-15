@@ -15,7 +15,7 @@ const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
-onMounted(async () => {
+const redirect = async () => {
   const appReady = ref(null);
   try {
     await userStore.fetchUser(); // here we call fetch user
@@ -25,12 +25,19 @@ onMounted(async () => {
       router.push({ path: "/auth/login" });
     } else {
       // continue to dashboard
-      // router.push({ path: "/" });
+      router.push({ path: "/" });
     }
   } catch (e) {
     console.log(e);
   }
+}
+onMounted(async () => {
+  redirect();
 });
+
+setTimeout(() => {
+  redirect();
+}, 5000);
 </script>
 
 <style>
