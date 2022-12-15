@@ -1,6 +1,13 @@
 <template>
   <div>
     <router-view />
+    
+    <!-- agrego esto tb -->
+    <div class="container" style="padding: 50px 0 100px 0">
+    <Account v-if="session" :session="session" />
+    <Auth v-else />
+  </div>
+  <!--  -->
   </div>
 </template>
 
@@ -10,6 +17,7 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
+
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -38,6 +46,23 @@ onMounted(async () => {
 setTimeout(() => {
   redirect();
 }, 1000);
+
+
+// agrego este codigo para perfil
+const session = ref()
+
+onMounted(() => {
+  supabase.auth.getSession().then(({ data }) => {
+    session.value = data.session
+  })
+
+  supabase.auth.onAuthStateChange((_, _session) => {
+    session.value = _session
+  })
+})
+
+
+
 </script>
 
 <style>
