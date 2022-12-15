@@ -1,6 +1,6 @@
 <template>
-  <Nav />
   <div class="wrapper">
+  <Nav />
 
   
   <h2>Name: {{username}}</h2>
@@ -52,8 +52,8 @@
     </form>
 
   </div>
-</div>
   <Footer/>
+</div>
 </template>
 
 <script setup>
@@ -130,76 +130,6 @@ import Footer from '../components/Footer.vue';
 
 <style>
 
-.account-update{
-  display:flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-}
-
-.containerAvatar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.imgAvatar{
-  margin: 1rem;
-  display: flex;
-  width: 300px;
-  height: 300px;
-}
-.avatar-upload{
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: none;
-  background-color: blue;
-  color:white;
-  width: 100px;
-  font-size: 20px;
-  
-  
-}
-
-
-.updateData{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-.data{
-  display: flex;
-  flex-direction: column;
-  /* align-content: flex-start; */
-  align-items: center;
-  margin:1rem
-}
-
-
-
-.btn-updateData{
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: none;
-  background-color: blue;
-  color:white;
-  width: 100px;
-  font-size: 20px;
-}
-
-@media (max-width: 767px) {
-  .account-update{
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-
-}
-
-
-}
 
 
 /* img {

@@ -8,11 +8,5 @@
 </script>
 
 <style>
-.footer{
-  background-color: var(--colorHeader-Footer);
-  padding: 1rem;
-  /* margin: 2rem auto; */
-  color: white;
-  text-align: center;
-}
+
 </style>
