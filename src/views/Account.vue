@@ -1,6 +1,9 @@
 <template>
   <Nav />
-  <h1>Name: {{username}}</h1>
+  <div class="wrapper">
+
+  
+  <h2>Name: {{username}}</h2>
   
   
   <div class="account-update" >
@@ -49,6 +52,7 @@
     </form>
 
   </div>
+</div>
   <Footer/>
 </template>
 
@@ -185,6 +189,17 @@ import Footer from '../components/Footer.vue';
   font-size: 20px;
 }
 
+@media (max-width: 767px) {
+  .account-update{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+
+}
 
 
 /* img {

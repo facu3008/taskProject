@@ -32,15 +32,15 @@
 
 .wrapper{
   /* background-color: #e3d5ca; */
-  background-color: #A1CDA8;
-  background-color: #EEEBD3;
+  
+  background-color: var(--colorFondo);
   
   
   /* background-image: url(./img/4k-pencil-writing-tools-notebook-wallpaper-preview.jpg); */
   background-size: cover;
   background-position: center;
   width: 100vw;
-  /* height: 100vh; */
+  min-height: 100vh;
   background-repeat: no-repeat;
 }
 
