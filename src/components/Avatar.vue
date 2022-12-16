@@ -1,15 +1,12 @@
 <script setup>
   import { ref, toRefs, watch } from 'vue'
   import { supabase } from '../supabase'
-
   const prop = defineProps(['path', 'size'])
   const { path, size } = toRefs(prop)
-
   const emit = defineEmits(['upload', 'update:path'])
   const uploading = ref(false)
   const src = ref('')
   const files = ref()
-
   const downloadImage = async () => {
     try {
       const { data, error } = await supabase.storage.from('avatars').download(path.value)
@@ -19,7 +16,6 @@
       console.error('Error downloading image: ', error.message)
     }
   }
-
   const uploadAvatar = async (evt) => {
     files.value = evt.target.files
     try {
@@ -27,13 +23,10 @@
       if (!files.value || files.value.length === 0) {
         throw new Error('You must select an image to upload.')
       }
-
       const file = files.value[0]
       const fileExt = file.name.split('.').pop()
       const filePath = `${Math.random()}.${fileExt}`
-
       let { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file)
-
       if (uploadError) throw uploadError
       emit('update:path', filePath)
       emit('upload')
@@ -43,7 +36,6 @@
       uploading.value = false
     }
   }
-
   watch(path, () => {
     if (path.value) downloadImage()
   })

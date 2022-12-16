@@ -95,9 +95,12 @@ const { isConfirmed } = await Swal.fire({
 const changeTask = async () => {
     await taskStore.changeTask(name.value, description.value, props.task.id);
     editTask.value = false;
-    
-   
     emit ('getTaskHijo');
+    Swal.fire({
+        text: "Task updated",
+        icon: "success",
+        width: "40%",
+         })
 };
 
 const editTask = ref (false);

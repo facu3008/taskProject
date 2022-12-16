@@ -104,16 +104,6 @@ import Footer from '../components/Footer.vue';
     }
   } 
 
-
-
-
-
-
-
-
-
-
-
   // SEGUN ALEIX ESTO SE BORRA
   async function signOut() {
     try {
@@ -137,6 +127,5 @@ import Footer from '../components/Footer.vue';
   border-radius: 50%;
 } */
 </style>
-
 
 
