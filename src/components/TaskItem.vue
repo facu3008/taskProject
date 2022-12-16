@@ -83,7 +83,7 @@ const { isConfirmed } = await Swal.fire({
     // emit ('getTaskHijo')
     Swal.fire({
         text: "Task conserved",
-        icon: "success",
+        // icon: "success",
         width: "50%",
          })
   }
@@ -99,8 +99,8 @@ const changeTask = async () => {
     emit ('getTaskHijo');
     Swal.fire({
         text: "Task updated",
-        icon: "success",
-        width: "40%",
+        // icon: "success",
+        width: "50%",
          })
 };
 
@@ -118,10 +118,14 @@ const statusTask = async () => {
     await taskStore.statusTask(!status.value, props.task.id);
     
     status.value= !status.value
-
-    console.log(status.value)
-    // emit ('archiveTaskHijo')
+    // console.log(status.value)
+    
     emit ('getTaskHijo')
+    Swal.fire({
+        text: "Status changed",
+        // icon: "success",
+        width: "50%",
+         })
 };
 
 
