@@ -73,6 +73,7 @@ const { isConfirmed } = await Swal.fire({
         text: "Task deleted",
         icon: "success",
         width: "40%",
+        height: "60%"
          })
   }
   else  {

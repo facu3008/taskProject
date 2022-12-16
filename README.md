@@ -1,13 +1,13 @@
 # [](https://github.com/facu3008/taskProject)ToDo App
 
-[Click para acceder a la web](------)
+[Click para acceder a la web](https://task-project-liard.vercel.app/)
+
+[Click para acceder a la presentacion](https://docs.google.com/presentation/d/1hjHfmyEk9HPRzjdoRbQDqyIzsi6ETORuxNvVYmpLpIA/edit#slide=id.g1bb0e8a792e_1_69)
 
 Autor: Facundo Moya
-Fecha:
+Fecha: 16/12/2022
 
 ## Descripcion
-
-![Pagina Home](https://i.postimg.cc/m2rV83dV/Captura-de-pantalla-2022-08-25-a-las-10-38-46.png)
 
 Proyecto final ha realizar durante el bootcamp de Front End Development en el Ironhack.
 Consiste en pagina web para gestionar las tareas pendientes.
@@ -51,3 +51,24 @@ Consiste en pagina web para gestionar las tareas pendientes.
 - Autenticacion por terceros.
   - Google
   - Github
+  - Discord
+
+### 13 diciembre:
+
+- Se modifica completamente Css
+
+### 14 diciembre:
+
+- Continuo estudio de falla en autenticacion de terceros
+- Se analiza posibilidad de agregar SweetAlert
+
+### 15 diciembre:
+
+- Solventada autentificacion
+- Aplicacion de Sweet Alert
+- Montaje de Users Account
+- Retoques finales CSS y HTML
+
+### 15 diciembre:
+
+- Preparacion de presentación y exposición
